@@ -1,0 +1,94 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts} %Matheschriften
+\usepackage{amssymb} %Mathesymbole
+%\usepackage{mathptmx} % Einstellung für Schriften und Sonderzeichen in mathematischen Umgebungen
+                        % ändert SChriftfont
+\usepackage{wasysym} % Stellt diverse Sonderzeichen bereit
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[section]{placeins}
+% allows for temporary adjustment of side margins
+\usepackage{changepage}
+\usepackage{rotating}
+
+
+\usepackage[ngerman]{babel}
+\addto\captionsngerman{%
+ \renewcommand{\abstractname}{Einleitung}}
+
+\title{Versuch 1:Röntgenstrahlung}
+\author{Team 4-11: Jascha Fricker, Benedict Brouwer}
+
+\begin{document}
+    \maketitle
+
+    \tableofcontents
+
+    \newpage
+
+    \section{Einleitung}
+
+    Röntgenstrahlen werden in vielen verschiedenen Bereichen benutzt. So z. B. als bildgebendes Verfahren in der Medizin oder in der zerstörungsfreien Prüfung von Werkstücken. In diesem Versuch werden die grundlegenden Eigenschaften von Röntgenstrahlen, sowie die Emissions und Absorbtionsfähigkeit von Materialien untersucht.
+
+    \section{Theorie}
+
+    \subsection{Röntgenstrahlung}
+
+    Die Energie eines Photons kann durch die Wellenlänge mithilfe des plankschen Wirkungsquantums berechnet werden.
+    \begin{align}
+        E = \frac{h \cdot c}{\lambda}
+    \end{align}
+    In einer Röntgenröhre werden Röntgenstrahlen durch die Bremsstrahlung von durch ein elektrisches Feld beschleunigten Elektronen erzeugt. Die minimale Wellenlänge
+    \begin{align}
+        \lambda_{min} = \frac{h \cdot c}{E_{max}} = \frac{h \cdot c}{e \cdot U}
+    \end{align}
+    ist durch die Beschleunigungsspannung $U$ bestimmt.
+
+    \subsection{Beugung an Kristallgittern}
+
+    Die Beugung an Kristallgittern wird durch die Bragg-Gleichung beschrieben.
+    \begin{align}
+        \frac{2 \cdot d \cdot \sin \theta}{\lambda} = n
+    \end{align}
+    Hierbei ist $d$ die Gitterkonstante, $\theta$ der Beugungswinkel und $\lambda$ die Wellenlänge des in diesem Winkel reflektierten Röntgenstrahls. Mit diesem Effekt kann das Röntgenspektrum bestimmt werden.
+
+    \subsection{Röntgenspektrum}
+
+    Das Röntgenspektrum wird duch die Beschleunigungsspannnung und das Material der Röntgenröhre mit den charackteristischen energieniveaus bestimmt. In diesem Versuch können die untersten zwei Energieniveaus, die $K_{\alpha}$ und $K_{\beta}$ Linien, erkannt werden, die nach Theoriewerten Energien von $17,2$ und $18,3$keV haben.
+
+    \subsection(Absorbtionsfähigkeit)
+
+    Die Transmisson eines Materials
+    \begin{align}
+        T(\lambda) = \frac{I(\lambda)}{I_{0}(\lambda)}
+    \end{align}
+    wird als Quotient aus der Intensität des durch das Material durchgelassenen Röntgenstrahls und der Intensität des ungestörten Röntgenstrahls bestimmt. Die Absorbtionsfähigkeit eines Materials
+    \begin{align}
+        A(\lambda) = 1 - T(\lambda) = \frac{I_{0}(\lambda) - I(\lambda)}{I_{0}(\lambda)}
+    \end{align}
+    ist die Intensiät, die nicht transmittiert wird.
+
+    \subsection{Totzeit}
+
+    Das Geiger-Müller Zählrohr kann direkt nach einem Event für eine bestimmte Zeit nicht mehr zählen. Diese Zeit wird als Totzeit bezeichnet. Die Totzeit ist abhängig von der Spannung, die auf das Zählrohr angewendet wird. Es gilt
+    \begin{align}
+        R_{z} = R \cdot e^{-R \cdot t} \circeq r \cdot I \cdot e^{-r \cdot \tau \cdot I}.
+    \end{align}
+
+    \section{Ergebnisse}
+
+    \subsection{Winkelunsicherheit}
+    Durch die verscheibung der Messreihen untereinander kann die Genauigkeit der Winkel bestimmt werden. Der Unterschied der gemessenen Winkel wird als Unischerheit der Winkelmessung benutzt.
+
+    \section{Diskussion}
+
+    \bibliographystyle{plain}
+    \bibliography{literature}
+
+\end{document}
