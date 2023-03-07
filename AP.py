@@ -251,7 +251,7 @@ def constructdata(udata):
     for i, I in enumerate(udata):
         data.append([])
         for j in I:
-            data[i].append(round_err(float(unumpy.nominal_values(j)), float(unumpy.std_devs(j))))
+            data[i].append(round_errtex(float(unumpy.nominal_values(j)), float(unumpy.std_devs(j))))
     return data
 
 

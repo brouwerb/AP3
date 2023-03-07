@@ -60,8 +60,7 @@
 
     \subsection{Röntgenspektrum}
 
-    Das Röntgenspektrum wird duch die Beschleunigungsspannnung und das Material der Röntgenröhre mit den charackteristischen energieniveaus bestimmt. In diesem Versuch können die untersten zwei Energieniveaus, die $K_{\alpha}$ und $K_{\beta}$ Linien, erkannt werden, die nach Theoriewerten Energien von $17,2$ und $18,3$keV haben.
-
+    Das Röntgenspektrum wird duch die Beschleunigungsspannnung und das Material der Röntgenröhre mit den charackteristischen energieniveaus bestimmt. In diesem Versuch können die untersten zwei Energieniveaus, die $K_{\alpha}$ und $K_{\beta}$ Linien, erkannt werden.
     \subsection(Absorbtionsfähigkeit)
 
     Die Transmisson eines Materials
@@ -86,7 +85,60 @@
     \subsection{Winkelunsicherheit}
     Durch die verscheibung der Messreihen untereinander kann die Genauigkeit der Winkel bestimmt werden. Der Unterschied der gemessenen Winkel wird als Unischerheit der Winkelmessung benutzt. Aus der Verschiebung der zwei Messreihen im Graph von etwa $0,1^{\circ}$ kann eine Unsicherheit von etwa $0,1^{\circ}$ geschätzt werden. So ergibt sich eine gesamte Winkelunsicherheit von $0,15^{\circ}$.
 
-    \subsection{Röntgenspektrum}
+    \subsection{Röntgenspektrum} \FloatBarrier
+
+    Mithilfe der Drehkristallmethode konnte das Röntgenspektrum \ref{fig:roentgenspektrum} gemessen werden. Aus diesem wurden die Maxima der $K_{\alpha}$ und $K_{\beta}$ Linien ersten, zweiten und dritten Grades bestimmt. Die gemessenen Werte sind in der Tabelle \ref{tab:roentgenspektrum} aufgeführt. Aus diesen konnten die endgültigen Ergebnisse für Wellenlänge und Enegie der $K_{\alpha}$ und $K_{\beta}$ Linien berechnet werden. Die Ergebnisse sind in der Tabelle \ref{tab:linienerg} aufgeführt.
+
+    \begin{table}
+        \centering
+        \caption{Ergebnisse Emissionsspektrum}
+        \label{tab:linienerg}
+        \begin{tabular}{c|c|c}
+            & $K_{\alpha}$ & $K_{\beta}$ \\
+            \hline
+            Wellenlänge $\lambda$ in nm & 70.51(57) & 62.75(57) \\
+            Energie $E$ in keV & 17.58(15) & 19.76(18) \\
+            Literaturwert Energie \cite{lin} in keV & 17,47934 & 19,6083
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h]
+        \centering
+        \label{tab:roentgenspektrum}
+        \begin{tabular}{c|c|c|c}
+        & \textbf{$n = 1$} & \textbf{$n = 2$} & \textbf{$n = 3$} \\ 
+        \hline
+        Winkel $K_{\alpha}$ in Grad & 7.15(15) & 14.50(15) & 22.10(15)\\ 
+        Winkel $K_{\beta}$ in Grad & 6.40(15) & 12.80(15) & 19.55(15)\\ 
+        Wellenlänge $K_{\alpha}$ in nm & 70.2(15) & 70.61(72) & 70.73(46) \\ 
+        Wellenlänge $K_{\beta}$ in nm & 62.9(15) & 62.48(72) & 62.91(47)\\ 
+        Energie $K_{\alpha}$ in keV & 17.66(37) & 17.56(18) & 17.53(12)\\ 
+        Energie $K_{\beta}$ in keV & 19.72(47) & 19.84(23) & 19.71(15)\\ 
+        \end{tabular}
+        \caption{Messwerte Emissionsspektrum}
+    \end{table}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{NaCl-Spektrum.pdf}
+        \caption{Röntgenspektrum}
+        \label{fig:roentgenspektrum}
+    \end{figure}
+
+    \subsection{Absorbtionsfähigkeit}
+
+    Aus dem Emissionsspektrum ohne Zirkonium-Folie und aus dem mit Zirkoniumfolie kann die Wellenlängenabhängige Transmission in \ref{fig:trans} geplottet werden. In diesem Plot erkennt man Absorbtionskante und deren Eigenschaften
+    \begin{align}
+        \text{Wellenlänge} \lambda = \\
+        \text{Energie} E = .
+    \end{align}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{transmission.pdf}
+        \caption{Transmission}
+        \label{fig:trans}
+    \end{figure}
     
 
     \section{Diskussion}
