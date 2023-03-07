@@ -320,3 +320,10 @@ def round_errtexU(num):
 def genIntBounds(a,inter):
     return [[i-inter for i in a],[i + inter for i in a ]]
 
+def fillZeros(arr):
+
+    for i in range(len(arr)):
+        if arr[i] == "":
+            arr[i]=0.0
+    return arr
+
