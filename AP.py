@@ -52,6 +52,31 @@ def getAxisFromCell(Cell1,Cell2,path,sheet,plusCol=0):
     for i in range(row1,row2):
         data.append(worksheet.cell(i, collumn1).value)    
     return data
+def getAxis(row1,collumn1,row2,path,sheet):
+    data = []
+    workbook = xlrd.open_workbook(path)
+    worksheet = workbook.sheet_by_name(sheet)
+    for i in range(row1,row2):
+        data.append(worksheet.cell(i, collumn1).value)    
+    return data
+
+def getRow(collumn1,row1,collumn2,path,sheet):
+    data = []
+    workbook = xlrd.open_workbook(path)
+    worksheet = workbook.sheet_by_name(sheet)
+    for i in range(collumn1,collumn2):
+        data.append(worksheet.cell(row1, i).value)    
+    return data
+
+def getTableFromCells(Cell1,Cell2,path,sheet):
+    row1=Alind(Cell1)[1]
+    collumn1 = Alind(Cell1)[0]
+    row2 = Alind(Cell2)[1]+1
+    collumn2 = Alind(Cell2)[0]+1
+
+    arr = [getAxis(row1,i,row2,path,sheet) for i in range(collumn1,collumn2)]
+    return arr
+
     
 def getAxisEasy(startRow,Collumn,path,sheet,plusCol=0):
 
@@ -92,21 +117,7 @@ def arrToUnumpyf(arr,uncertantie):
     return narr
 
 
-def getAxis(row1,collumn1,row2,path,sheet):
-    data = []
-    workbook = xlrd.open_workbook(path)
-    worksheet = workbook.sheet_by_name(sheet)
-    for i in range(row1,row2):
-        data.append(worksheet.cell(i, collumn1).value)    
-    return data
 
-def getRow(collumn1,row1,collumn2,path,sheet):
-    data = []
-    workbook = xlrd.open_workbook(path)
-    worksheet = workbook.sheet_by_name(sheet)
-    for i in range(collumn1,collumn2):
-        data.append(worksheet.cell(row1, i).value)    
-    return data
 
 def analogErr(a):
     return a/(2*np.sqrt(6))
