@@ -54,7 +54,7 @@ for i in range(1,len(data)):
     xLamb =  angleToLambda(arr[0])
     ax.plot(xLamb,arr[1])
     clPoint = getClosestPoint(L0[i-1],[xLamb,arr[1]])
-    ax.scatter(clPoint[0],clPoint[1],marker = "x")
+    ax.scatter(clPoint[0],clPoint[1],label=fr"$\lambda_0$ = {L0[i-1] * 1e12} $pm$")
 
 
 
