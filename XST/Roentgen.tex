@@ -46,7 +46,8 @@
     \end{align}
     In einer Röntgenröhre werden Röntgenstrahlen durch die Bremsstrahlung von durch ein elektrisches Feld beschleunigten Elektronen erzeugt. Die minimale Wellenlänge
     \begin{align}
-        \lambda_{min} = \frac{h \cdot c}{E_{max}} = \frac{h \cdot c}{e \cdot U}
+        \lambda_{min} = \frac{h \cdot c}{E_{max}} &= \frac{h \cdot c}{e \cdot U} \\
+        h &= \frac{\lambda_{min} e U}{c} \label{eq:plank}
     \end{align}
     ist durch die Beschleunigungsspannung $U$ bestimmt.
 
@@ -66,7 +67,7 @@
 
     Die Transmisson eines Materials
     \begin{align}
-        T(\lambda) = \frac{I(\lambda)}{I_{0}(\lambda)}
+        T(\lambda) = \frac{I(\lambda)}{I_{0}(\lambda)} \label{eq:transmission}
     \end{align}
     wird als Quotient aus der Intensität des durch das Material durchgelassenen Röntgenstrahls und der Intensität des ungestörten Röntgenstrahls bestimmt. Die Absorbtionsfähigkeit eines Materials
     \begin{align}
@@ -86,7 +87,7 @@
     \subsection{Winkelunsicherheit}
     Durch die verscheibung der Messreihen untereinander kann die Genauigkeit der Winkel bestimmt werden. Der Unterschied der gemessenen Winkel wird als Unischerheit der Winkelmessung benutzt. Aus der Verschiebung der zwei Messreihen im Graph von etwa $0,1^{\circ}$ kann eine Unsicherheit von etwa $0,1^{\circ}$ geschätzt werden. So ergibt sich eine gesamte Winkelunsicherheit von $0,15^{\circ}$.
 
-    \subsection{Röntgenspektrum} \FloatBarrier
+    \subsection{Röntgenspektrum}
 
     Mithilfe der Drehkristallmethode konnte das Röntgenspektrum \ref{fig:roentgenspektrum} gemessen werden. Aus diesem wurden die Maxima der $K_{\alpha}$ und $K_{\beta}$ Linien ersten, zweiten und dritten Grades bestimmt. Die gemessenen Werte sind in der Tabelle \ref{tab:roentgenspektrum} aufgeführt. Aus diesen konnten die endgültigen Ergebnisse für Wellenlänge und Enegie der $K_{\alpha}$ und $K_{\beta}$ Linien berechnet werden. Die Ergebnisse sind in der Tabelle \ref{tab:linienerg} aufgeführt.
 
@@ -128,7 +129,7 @@
 
     \subsection{Absorbtionsfähigkeit}
 
-    Aus dem Emissionsspektrum ohne Zirkonium-Folie und aus dem mit Zirkoniumfolie kann die Wellenlängenabhängige Transmission in \ref{fig:trans} geplottet werden. In diesem Plot erkennt man Absorbtionskante und deren Eigenschaften
+    Aus dem Emissionsspektrum ohne Zirkonium-Folie und aus dem mit Zirkoniumfolie kann die Wellenlängenabhängige Transmission mit \ref{eq:transmission} berechnet und in \ref{fig:trans} geplottet werden. In diesem Plot erkennt man Absorbtionskante und deren Eigenschaften
     \begin{align}
         \text{Wellenlänge} \lambda &= 67,7(13) \si{\pico\meter}\\
         \text{Energie} E &= 18.31(35).
@@ -144,12 +145,12 @@
     \subsection{LiF-Kristall}
     Durch die gemessen Winkel
     \begin{align}
-        K_{\alpha} &= 7.15(15) \si{\degree} \\
-        K_{\beta} &= 6.40(15) \si{\degree}
+        K_{\alpha} &= 10.053(84) \si{\degree} \\
+        K_{\beta} &= 8.903(84) \si{\degree}
     \end{align}
     der Linien im Röntgenspektrum des LiF Kristall (Siehe \ref{fig:LiF}) und die in vorher berechneten Wellenlängen der Linien kann mit Formel \ref{eq:gitter} die Gitterkonstante
     \begin{align}
-        g_{LiF} = 0.390(15) \si{\nano\meter}
+        g_{LiF} = 404,7(38) \si{\pico\meter}
     \end{align}
     des LiF-Kristalls bestimmt werden.
 
@@ -163,11 +164,44 @@
     \subsection{Detektor-Totzeit}
     Durch die Zählrate der $K_{\alpha}$ Linie bei verschienen Strömen und einen Fit der Formel \ref{eq:totzeit}, welches im Graph \ref{fig:totzeit} dargestellt ist, konnte die Detektor-Totzeit
     \begin{align}
-        \tau = 0.000(15) \si{\milli\second}
+        \tau = 94,5(80) \si{\micro\second}
     \end{align}
-    bestimmt werden
+    bestimmt werden. Die Rohdaten sind im Anhang \ref{fig:totzeitroh} zu finden.
 
-    \section{Diskussion}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{Detektortotzeit.pdf}
+        \caption{Detektor-Totzeit}
+        \label{fig:totzeit}
+    \end{figure}
+
+    \subsection{Planksches Wirkungsquantum}
+
+    Durch die Messung des Grenzwinkels $\theta_0$ und damit der Grenzwellenlänge $\lambda_0$ bei verschiedenen Strömen, wie im Graph \ref{fig:plank} dargestellt, kann das Planksche Wirkungsquantum
+    \begin{align}
+        h = 8,96(14) \cdot 10^{34} \text{Js} \\
+        \text{Theoriewert \cite{plank}} \ \  h = 6,6260755(40) \cdot 10^{34} \text{Js}
+    \end{align}
+    mithilfe der Formel \ref{eq:plank} bestimmt werden. Als Ableseungenauigkeit der Grenzwellenlänge wurden $2$ pm angenommen.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{Plank.pdf}
+        \caption{Planksches Wirkungsquantum}
+        \label{fig:plank}
+    \end{figure}
+
+    \section{Anhang}
+
+    \subsection{Detektortotzeit}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{DetektortotzeitRoh.pdf}
+        \caption{Detektor-Totzeit Rohdaten}
+        \label{fig:totzeitroh}
+    \end{figure}
+
 
     \bibliographystyle{plain}
     \bibliography{literature}

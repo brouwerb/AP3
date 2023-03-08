@@ -41,7 +41,7 @@ L0 = [4.7e-11,5.1e-11,5.55e-11,6.0e-11,6.57e-11,7.1e-11]
 
 #----------- plot
 
-
+U = [35, 32.5, 30, 28, 26, 24]
 
 fig, ax = plt.subplots()
 
@@ -54,7 +54,7 @@ for i in range(1,len(data)):
     xLamb =  angleToLambda(arr[0])
     ax.plot(xLamb,arr[1])
     clPoint = getClosestPoint(L0[i-1],[xLamb,arr[1]])
-    ax.scatter(clPoint[0],clPoint[1],label=fr"$\lambda_0$ = {L0[i-1] * 1e12} $pm$")
+    ax.scatter(clPoint[0],clPoint[1],label=fr"$\lambda_0$ = {L0[i-1] * 1e12} $pm$, U = {U[i-1]} kV")
 
 
 
@@ -80,6 +80,7 @@ ax.xaxis.set_major_formatter(ticker.FuncFormatter(format_func))
 plt.legend()
 plt.savefig(SAVE_AS)
 plt.show()
+
 
 
 
