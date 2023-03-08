@@ -12,14 +12,14 @@ import math
 COLOR_STYLE = ["red","green","blue"]
 Y_LABEL = r"Absorbtion $A$"
 X_LABEL = r"Wellenlänge in $nm$"
-X_START =0.2
+X_START =0.04
 Y_START =0.3
-X_END = 0.4
+X_END = 0.1
 Y_END = 1
 
-X_MAJOR_TICK = 0.5e-1
+X_MAJOR_TICK = 0.1e-1
 Y_MAJOR_TICK =0.1
-X_MINOR_TICK = 0.1e-1
+X_MINOR_TICK = 0.02e-1
 Y_MINOR_TICK = 0.02
 SAVE_AS = "./XST/Zirkonium.pdf"
 
@@ -27,7 +27,7 @@ SAVE_AS = "./XST/Zirkonium.pdf"
 path_ = "./XST/data.xls"
 
 
-d = 2 * 564.02e-12
+d = 0.5 * 564.02e-12
 def angleToLambda(arr):
     for i in range(len(arr)):
         arr[i] = 2* d *math.sin(math.radians(arr[i]))
@@ -42,7 +42,7 @@ print(data)
 ax.grid()
 
 ax.plot(np.array(data[0])*1e9,1-(np.array(data[3])/np.array(data[1])))
-ax.axvline(0.27,color="red",linewidth=0.8)
+ax.axvline(0.0677,color="red",linewidth=0.8)
 #ax.plot(data[0],data[3],color="orange")
 
 
@@ -51,7 +51,7 @@ ax.set_ylabel(Y_LABEL)
 ax.set_xlim(X_START,X_END)
 ax.set_ylim(Y_START,Y_END)
 
-plt.legend(("Absorbtion",r"Absorptionskante bei 0.27 $nm$"),loc = 1)
+plt.legend(("Absorbtion",r"Absorptionskante bei 0.0677 $nm$"),loc = 1)
 
 ax.xaxis.set_major_locator(MultipleLocator(X_MAJOR_TICK))
 ax.xaxis.set_minor_locator(MultipleLocator(X_MINOR_TICK))
