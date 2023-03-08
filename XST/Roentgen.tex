@@ -54,7 +54,8 @@
 
     Die Beugung an Kristallgittern wird durch die Bragg-Gleichung beschrieben.
     \begin{align}
-        \frac{2 \cdot d \cdot \sin \theta}{\lambda} = n
+        \2 \cdot d \cdot \sin \theta = g \cdot sin \theta = n \lambda \\
+        g = \frac{n \lambda}{sin \theta} \label{eq:gitter}
     \end{align}
     Hierbei ist $d$ die Gitterkonstante, $\theta$ der Beugungswinkel und $\lambda$ die Wellenlänge des in diesem Winkel reflektierten Röntgenstrahls. Mit diesem Effekt kann das Röntgenspektrum bestimmt werden.
 
@@ -77,7 +78,7 @@
 
     Das Geiger-Müller Zählrohr kann direkt nach einem Event für eine bestimmte Zeit nicht mehr zählen. Diese Zeit wird als Totzeit bezeichnet. Die Totzeit ist abhängig von der Spannung, die auf das Zählrohr angewendet wird. Es gilt
     \begin{align}
-        R_{z} = R \cdot e^{-R \cdot t} \circeq r \cdot I \cdot e^{-r \cdot \tau \cdot I}.
+        R_{z} = R \cdot e^{-R \cdot t} \circeq r \cdot I \cdot e^{-r \cdot \tau \cdot I}. \label{eq:totzeit}
     \end{align}
 
     \section{Ergebnisse}
@@ -96,7 +97,7 @@
         \begin{tabular}{c|c|c}
             & $K_{\alpha}$ & $K_{\beta}$ \\
             \hline
-            Wellenlänge $\lambda$ in nm & 70.51(57) & 62.75(57) \\
+            Wellenlänge $\lambda$ in pm & 70.51(57) & 62.75(57) \\
             Energie $E$ in keV & 17.58(15) & 19.76(18) \\
             Literaturwert Energie \cite{lin} in keV & 17,47934 & 19,6083
         \end{tabular}
@@ -110,8 +111,8 @@
         \hline
         Winkel $K_{\alpha}$ in Grad & 7.15(15) & 14.50(15) & 22.10(15)\\ 
         Winkel $K_{\beta}$ in Grad & 6.40(15) & 12.80(15) & 19.55(15)\\ 
-        Wellenlänge $K_{\alpha}$ in nm & 70.2(15) & 70.61(72) & 70.73(46) \\ 
-        Wellenlänge $K_{\beta}$ in nm & 62.9(15) & 62.48(72) & 62.91(47)\\ 
+        Wellenlänge $K_{\alpha}$ in pm & 70.2(15) & 70.61(72) & 70.73(46) \\ 
+        Wellenlänge $K_{\beta}$ in pm & 62.9(15) & 62.48(72) & 62.91(47)\\ 
         Energie $K_{\alpha}$ in keV & 17.66(37) & 17.56(18) & 17.53(12)\\ 
         Energie $K_{\beta}$ in keV & 19.72(47) & 19.84(23) & 19.71(15)\\ 
         \end{tabular}
@@ -129,17 +130,42 @@
 
     Aus dem Emissionsspektrum ohne Zirkonium-Folie und aus dem mit Zirkoniumfolie kann die Wellenlängenabhängige Transmission in \ref{fig:trans} geplottet werden. In diesem Plot erkennt man Absorbtionskante und deren Eigenschaften
     \begin{align}
-        \text{Wellenlänge} \lambda = \\
-        \text{Energie} E = .
+        \text{Wellenlänge} \lambda &= 67,7(13) \si{\pico\meter}\\
+        \text{Energie} E &= 18.31(35).
     \end{align}
 
     \begin{figure}
         \centering
-        \includegraphics[width=0.8\textwidth]{transmission.pdf}
+        \includegraphics[width=0.8\textwidth]{Zirkonium.pdf}
         \caption{Transmission}
         \label{fig:trans}
     \end{figure}
-    
+
+    \subsection{LiF-Kristall}
+    Durch die gemessen Winkel
+    \begin{align}
+        K_{\alpha} &= 7.15(15) \si{\degree} \\
+        K_{\beta} &= 6.40(15) \si{\degree}
+    \end{align}
+    der Linien im Röntgenspektrum des LiF Kristall (Siehe \ref{fig:LiF}) und die in vorher berechneten Wellenlängen der Linien kann mit Formel \ref{eq:gitter} die Gitterkonstante
+    \begin{align}
+        g_{LiF} = 0.390(15) \si{\nano\meter}
+    \end{align}
+    des LiF-Kristalls bestimmt werden.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{LiF-Spektrum.pdf}
+        \caption{Röntgenspektrum LiF Kristall}
+        \label{fig:LiF}
+    \end{figure}
+
+    \subsection{Detektor-Totzeit}
+    Durch die Zählrate der $K_{\alpha}$ Linie bei verschienen Strömen und einen Fit der Formel \ref{eq:totzeit}, welches im Graph \ref{fig:totzeit} dargestellt ist, konnte die Detektor-Totzeit
+    \begin{align}
+        \tau = 0.000(15) \si{\milli\second}
+    \end{align}
+    bestimmt werden
 
     \section{Diskussion}
 
