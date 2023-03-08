@@ -338,3 +338,21 @@ def fillZeros(arr):
             arr[i]=0.0
     return arr
 
+def croppArray(x,y):
+    arr = [[],[]]
+    for i,I in enumerate(y):
+        if I != "":
+            arr[0].append(x[i])
+            arr[1].append(y[i])
+    return arr
+
+def getClosestPoint(x,arr):
+    dif = abs(arr[0][0]-x)
+    index = 0
+    for i,I in enumerate(arr[0]):
+        if dif > abs(I-x):
+            dif =  abs(I-x)
+            index = i
+    return [arr[0][index],arr[1][index]]
+        
+
