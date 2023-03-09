@@ -45,15 +45,15 @@
     \end{align}4
     kann man die Verschiebung des Spiegels $\Delta s$ durch die Anzahl der Maxima $N$ und berechnen. Für die Ganghöhe wollen wir den Abstand pro Einheit
     \begin{align}
-        g =
+        g = \frac{\Delta s}{\Delta x} = \frac{N \lambda}{2 \Delta x}
     \end{align}
-    haben, wobei $x$ die 
+    haben, wobei $x$ Anzahl der Umdrehungen ist. 
 
     \subsection{Brechungsindex Luft}
     Mit folgenden Formeln sind Brechungindex $n$, Druck $p$ und Anzahl gezählter Maxima $N$ verknüpft
     \begin{align}
         N \cdot \lambda &= 2 l \cdot \Delta n \\
-        n = 1 + \frac{\chi}{T} p \\
+        n = 1 + \frac{\chi}{T} p \label{eq:luft} \\ 
         N \cdot \lambda &= 2 l \cdot \frac{\chi}{T} \Delta p
     \end{align}
     wobei $l$ die Länge der evakuierbaren Kammer ist.
@@ -71,12 +71,24 @@
 
     Aus den gemessenen Daten lässt sich eine Ganghöhe des Spiegels von
     \begin{align}
-        g = 0.5 \si{\milli\metre}
+        g = 19.03(9) \si{\nano\metre}
     \end{align}
-    pro Einheit Schraubendrehung bestimmen. Als Fehler wurden wegen der analogen Messung eine Ungenauigkeit von $0.21$ Einheiten angenommen.     
+    pro Einheit Schraubendrehung bestimmen. Als Fehler wurden wegen der analogen Messung eine Ungenauigkeit von $0.21$ Einheiten angenommen.  
+    
+    \subsection{Brechungsindex Luft}
 
+    Durch einen Fit der Formel \ref{eq:luft}, wie im Graphen \ref{fig:druck} gezeigt, kann die Proprtionalitätskonstante
+    \begin{align}
+        \chi = 7,52(11) \cdot 10^{-10} \si{\kelvin\per\pascal}
+    \end{align}
+    bestimmt werden. Berücksichtigt wurden Unsicherheiten beim Luftdruck und bei der Temperatur.
 
-
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{./plots/druck.pdf}
+        \caption{Druckabhängigkeit Brechungindex}
+        \label{fig:luft}
+    \end{figure}
 
     \section{Ergebnisse}
 
