@@ -46,8 +46,6 @@ fitDat =genDataFromFunktion(1000,X_START,X_END,popt,funcArr)
 
 #----------- plot
 
-
-
 fig, ax = plt.subplots()
 
 
