@@ -61,8 +61,8 @@
     \subsection{Brechungsindex Plexiglas}
     Durch Drehung der Plexiglsscheibe mit Dicke $d$ um Winkel $\alpha$ kann der Brechungsindex $n$ bestimmt werden.
     \begin{align}
-        N \cdot \lambda &= 2 \cdot h \cdot \left(1 - n - cos(\alpha) + \sqrt{n^2 - sin^2(\alpha)}\right) \\
-        tan(\alpha) &= \frac{x + c}{d}
+        N \cdot \lambda &= 2 \cdot h \cdot \left(1 - n - cos(\alpha) + \sqrt{n^2 - sin^2(\alpha)}\right)\label{fitplex} \\
+        tan(\alpha) &= \frac{x + c}{d} \label{Winkelum}
     \end{align}
     wobei $N$ die Anzahl an Maxima $x$ die Länge der Schraube und $d$ der Abstand der Schraube vom Drehpunkt ist.
 
@@ -74,9 +74,20 @@
         g = 0.5 \si{\milli\metre}
     \end{align}
     pro Einheit Schraubendrehung bestimmen. Als Fehler wurden wegen der analogen Messung eine Ungenauigkeit von $0.21$ Einheiten angenommen.     
+    \subsection{Brechungsindex der Plexiglasplatte}
+    Um den Brechungsindex einer Plexiglasplatte zu bestimmen wird diese auf einem rotierenden Tisch, dessen Winkel zum Strahl mit einer Arretierungsschraube eingestellt werden kann, montiert.
+    Aus den abgelesenen Werten kann mit \ref{Winkelum} und einer Helbelarmlänge von $d = 28$ mm Der Winkel zum Strahl berechnet werden.
+    Die gemessenen Werte wurden nun in Graph \ref{plexiplot} mit Funktion \ref{fitplex} gefittet. Dabei erhielten wir für den Brechungsindex 
+    einen Wert von $n = 1,46337(95)$ was vergleichbar mit dem Literaturwert von $n_{lit} = 1,5007$ \cite[text]{keylist} ist.
 
 
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{./plots/plexi.pdf}
 
+        \caption{Durchlaufene Intensitätsmaxima in Bezug auf den Drehwinkel des Tisches}
+        \label{fig:plexiplot}
+    \end{figure}
 
     \section{Ergebnisse}
 
@@ -84,5 +95,6 @@
 
     \bibliographystyle{plain}
     \bibliography{literature}
+    % https://refractiveindex.info/?shelf=other&book=pmma_resists&page=Microchem495
 
 \end{document}
