@@ -11,7 +11,7 @@ import matplotlib.ticker as ticker
 
 
 
-Y_LABEL = r"Druck $\Delta p$ in Mpa"
+Y_LABEL = r"Druck $\Delta p$ in Kpa"
 X_LABEL = r"Brechungsindex $\Delta n$"
 X_START =0 
 Y_START =0
