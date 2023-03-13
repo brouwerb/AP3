@@ -53,7 +53,7 @@
     Mit folgenden Formeln sind Brechungindex $n$, Druck $p$ und Anzahl gezählter Maxima $N$ verknüpft
     \begin{align}
         N \cdot \lambda &= 2 l \cdot \Delta n \\
-        n = 1 + \frac{\chi}{T} p \label{eq:luft} \\ 
+        n &= 1 + \frac{\chi}{T} p \label{eq:luft} \\ 
         N \cdot \lambda &= 2 l \cdot \frac{\chi}{T} \Delta p
     \end{align}
     wobei $l$ die Länge der evakuierbaren Kammer ist.
@@ -94,12 +94,11 @@
     \subsection{Brechungsindex der Plexiglasplatte}
     Um den Brechungsindex einer Plexiglasplatte zu bestimmen wird diese auf einem rotierenden Tisch, dessen Winkel zum Strahl mit einer Arretierungsschraube eingestellt werden kann, montiert.
     Aus den abgelesenen Werten kann mit \ref{Winkelum} und einer Helbelarmlänge von $d = 28$ mm Der Winkel zum Strahl berechnet werden.
-    Die gemessenen Werte wurden nun in Graph \ref{plexiplot} mit Funktion \ref{fitplex} gefittet. Dabei erhielten wir für den Brechungsindex einen Wert von
+    Die gemessenen Werte wurden nun in Graph \ref{fig:plexiplot} mit Funktion \ref{fitplex} gefittet. Dabei erhielten wir für den Brechungsindex einen Wert von
     \begin{align}
         n = 1,46337(95)
     \end{align}
-    was vergleichbar mit dem Literaturwert von $n_{lit} = 1,5007$ \cite[Siehe:]{refdat} ist. Als Fehler wurden die Dickemessung und die  Ablesegenauigkeit bei der Winkelmessung beachtet.
-
+    was vergleichbar mit dem Literaturwert von $n_{lit} = 1,5007$ \cite[Siehe:]{refdat} ist.
     \begin{figure}[!h]
         \centering
         \includegraphics[width=\textwidth]{./plots/plexi.pdf}
