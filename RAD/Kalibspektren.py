@@ -14,7 +14,7 @@ Y_LABEL = r"Hits"
 X_LABEL = r"Kanäle"
 X_START =0 
 Y_START =0
-X_END = 700
+X_END = 850
 Y_END = 14000
 
 X_MAJOR_TICK = 100

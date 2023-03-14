@@ -12,15 +12,15 @@ import matplotlib.ticker as ticker
 
 
 Y_LABEL = r"Druck $\Delta p$ in Kpa"
-X_LABEL = r"Brechungsindex $\Delta n$"
-X_START =0 
+X_LABEL = r"Brechungsindex $n$"
+X_START =0 +1
 Y_START =0
-X_END = 2.5e-7
+X_END = 3e-4+1
 Y_END = 120000
 
-X_MAJOR_TICK = 0.5e-7
+X_MAJOR_TICK = 0.5e-4
 Y_MAJOR_TICK =20000
-X_MINOR_TICK = 0.1e-7
+X_MINOR_TICK = 0.1e-4
 Y_MINOR_TICK = 5000
 SAVE_AS = "./INT/plots/druck.pdf"
 
@@ -31,7 +31,7 @@ data = getTableFromCells("A16","B27",path_,"V2")
 print(data)
 
 lamb = 632.8e-9
-laenge = 49.4
+laenge = 49.4e-3
 def cal_N(numMax):
     return numMax*lamb/2/laenge
 
@@ -52,19 +52,19 @@ data[1] = [(1.0135-i)*1e5 for i in data[1]]
 #---------------  fit
 T = 22.7+273.15
 def func(n,x,c):
-    return n*T*1/x +c
+    return (n-c)*T*1/x
 def funcArr(n,arr):
     return func(n,arr[0],arr[1])
 
 
 popt,perr = optimize.curve_fit(func,data[0],data[1],p0=[1e-12,0])
 print(popt,np.sqrt(np.diag(perr)))
-fitDat =genDataFromFunktion(1000,X_START,X_END,popt,funcArr)
+fitDat =genDataFromFunktion(1000,0,3e-4,popt,funcArr)
 
 
 #ax.scatter(data[0],data[1],s=15)
-ax.errorbar(data[0],data[1],fmt="x",yerr=data[2], ecolor = 'black',elinewidth=0.9,capsize=4,capthick=0.9,label="Messdaten")
-ax.plot(fitDat[0],fitDat[1],color = "red",label=fr"fit mit $\chi$={round_errtex(popt[0],np.sqrt(np.diag(perr))[0])}" )
+ax.errorbar(np.array(data[0])-popt[1]+1,data[1],fmt="x",yerr=data[2], ecolor = 'black',elinewidth=0.9,capsize=4,capthick=0.9,label="Messdaten")
+ax.plot(np.array(fitDat[0])-popt[1]+1,fitDat[1],color = "red",label=fr"fit mit $\chi$={round_errtex(popt[0],np.sqrt(np.diag(perr))[0])}" )
 
 
 
