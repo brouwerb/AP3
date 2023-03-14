@@ -36,17 +36,49 @@ for i, I in enumerate(angles):
 print(wavelengths)
 # Average wavelengths over n values
 
-avg_wavelengths = sum(wavelengths)/len(wavelengths)
-print(avg_wavelengths)
+Kbnom = [nominal_value(i[0]) for i in wavelengths]
+Kberr = [std_dev(i[0]) for i in wavelengths]
+
+Kbavg = gewichteterMittelwert(Kbnom, Kberr)
+Kbavgerr = intExtFehler(Kbnom, Kberr)
+
+print(round_errtex(Kbavg, Kbavgerr))
+
+Kanom = [nominal_value(i[1]) for i in wavelengths]
+Kaerr = [std_dev(i[1]) for i in wavelengths]
+
+Kaavg = gewichteterMittelwert(Kanom, Kaerr)
+Kaavgerr = intExtFehler(Kanom, Kaerr)
+
+print(round_errtex(Kaavg, Kaavgerr))
+
+avg_wavelengths = uarray([Kaavg, Kbavg], [Kaavgerr, Kbavgerr])
 
 #calc energy
 
 E = h*c/(avg_wavelengths*e*1000)
 
+print(E)
 
 
 data = [*data, *np.transpose(wavelengths), *np.transpose(Eg) ]
 print(data)
 
 printtableaslatex(constructdata(data), "Messwerte", ["$n = 1$", "$n = 2$", "$n = 3$"])
+
+L = uarray([4.813165885397388e-11, 5.263708442320518e-11, 5.713021022715293e-11, 6.174982316236505e-11, 6.675139411337414e-11, 7.248380622946957e-11], 0.2e-11)
+
+U0 = [35, 32.5, 30, 28, 26, 24]
+
+U = uarray([35, 32.5, 30, 28, 26, 24], 0.5)*1000
+
+e = 1.602176634e-19
+c = 299792458
+
+h = L * e * U / c
+print([nominal_value(i) for i in h])
+
+hav = gewichteterMittelwert([nominal_value(i) for i in h],[std_dev(i) for i in h])
+herr = intExtFehler([nominal_value(i) for i in h],[std_dev(i) for i in h])
+print(round_errtex(hav, herr))
 

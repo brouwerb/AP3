@@ -63,7 +63,7 @@ for i,I in enumerate(fitData):
 #----------- plot
 
 U = [35, 32.5, 30, 28, 26, 24]
-
+print("SChnittwerter:", schnittWerte)
 fig, ax = plt.subplots()
 
 
