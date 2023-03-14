@@ -52,6 +52,7 @@ fig, ax = plt.subplots()
 ax.grid()
 
 ax.scatter(Totdat[0],Totdat[1],s=15)
+ax.errorbar(Totdat[0],Totdat[1],xerr=20e-6,fmt="x", ecolor = 'black',elinewidth=0.9,capsize=4,capthick=0.9,label="Messdaten")
 ax.plot(fitDat[0],fitDat[1],color = "red")
 
 ax.set_xlabel(X_LABEL)

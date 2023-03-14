@@ -7,11 +7,12 @@ from AP import *
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 import math
+import matplotlib.ticker as ticker
 
 
 COLOR_STYLE = ["red","green","blue"]
 Y_LABEL = r"Absorbtion $A$"
-X_LABEL = r"Wellenlänge in $nm$"
+X_LABEL = r"Wellenlänge in $pm$"
 X_START =0.04
 Y_START =0.3
 X_END = 0.1
@@ -51,12 +52,19 @@ ax.set_ylabel(Y_LABEL)
 ax.set_xlim(X_START,X_END)
 ax.set_ylim(Y_START,Y_END)
 
-plt.legend(("Absorbtion",r"Absorptionskante bei 0.0677 $nm$"),loc = 1)
+plt.legend(("Absorbtion",r"Absorptionskante bei 67.7 $pm$"),loc = 1)
 
 ax.xaxis.set_major_locator(MultipleLocator(X_MAJOR_TICK))
 ax.xaxis.set_minor_locator(MultipleLocator(X_MINOR_TICK))
 ax.yaxis.set_major_locator(MultipleLocator(Y_MAJOR_TICK))
 ax.yaxis.set_minor_locator(MultipleLocator(Y_MINOR_TICK))
+
+def format_func(value, tick_number):
+    return round(value*1000,2)
+
+# Set the x-axis formatter
+ax.xaxis.set_major_formatter(ticker.FuncFormatter(format_func))
+
 
 plt.savefig(SAVE_AS)
 plt.show()
