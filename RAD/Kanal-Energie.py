@@ -10,7 +10,7 @@ import matplotlib.ticker as ticker
 
 
 COLOR_STYLE = ["red","green","blue","orange","violet","darkgreen"]
-Y_LABEL = r"Hits"
+Y_LABEL = r"Energie in KeV"
 X_LABEL = r"Kanäle"
 X_START =0 
 Y_START =0
@@ -21,7 +21,7 @@ X_MAJOR_TICK = 100
 Y_MAJOR_TICK =500
 X_MINOR_TICK = 20
 Y_MINOR_TICK = 100
-SAVE_AS = "./RAD/plots/Kalibspektren.pdf"
+SAVE_AS = "./RAD/plots/Kanal-Energie.pdf"
 
 path_ = "./RAD/RAD.xls"
 
@@ -36,7 +36,7 @@ fig, ax = plt.subplots()
 
 
 ax.grid()
-fitData = []
+fitData = [[],[]]
 for i,I in enumerate(peaks[1]):
     if peaks[3][i] != '':
         if peaks[0][i]== "Csäsium":
@@ -45,23 +45,29 @@ for i,I in enumerate(peaks[1]):
             Co = ax.scatter(peaks[1][i],peaks[3][i],color = COLOR_STYLE[1])
         else:
             Na = ax.scatter(peaks[1][i],peaks[3][i],color = COLOR_STYLE[2])
-        fitData.append([peaks[1][i],peaks[3][i]])
+        fitData[0].append(peaks[1][i])
+        fitData[1].append(peaks[3][i])
 
+
+print(fitData)
 def gerade (x,a,b):
     return a*x+b
 def geradeArr (x,arr):
     return gerade(x,arr[0],arr[1])
 
-popt,perr = optimize.curve_fit(gerade,fitData[0],fitData[1])
+popt,perr = optimize.curve_fit(gerade,fitData[0],fitData[1],p0=[100,0])
+print(popt,np.sqrt(np.diag(perr)))
 fitPlot = genDataFromFunktion(5,X_START,X_END,popt,geradeArr)
 
-fit = ax.plot(fitPlot[0],fitPlot[1],color="black")
+fit, = ax.plot(fitPlot[0],fitPlot[1],color="black")
 
 ax.set_xlabel(X_LABEL)
 ax.set_ylabel(Y_LABEL)
 ax.set_xlim(X_START,X_END)
 ax.set_ylim(Y_START,Y_END)
-ax.legend([Cs,Co,Na,fit],elements.append("fit a"),loc=2)
+elements.append(f"fit ax+c mit a={round_errtex(popt[0],np.sqrt(np.diag(perr)[0]))}; b={round_errtex(popt[1],np.sqrt(np.diag(perr)[1]))}")
+print(elements)
+ax.legend([Cs,Co,Na,fit],elements,loc=2)
 
 
 ax.xaxis.set_major_locator(MultipleLocator(X_MAJOR_TICK))
