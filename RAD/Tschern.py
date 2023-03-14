@@ -15,13 +15,13 @@ X_LABEL = r"Energie in KeV"
 X_START =0 
 Y_START =0
 X_END = 2500
-Y_END = 150
+Y_END = 1300
 
 X_MAJOR_TICK = 500
-Y_MAJOR_TICK =20
+Y_MAJOR_TICK =100
 X_MINOR_TICK = 100
-Y_MINOR_TICK = 5
-SAVE_AS = "./RAD/plots/K2CO3.pdf"
+Y_MINOR_TICK = 20
+SAVE_AS = "./RAD/plots/Tschern.pdf"
 
 path_ = "./RAD/RAD.xls"
 
@@ -36,25 +36,18 @@ def calEnergie (Kanal):
 Untergrundraw = getTableFromCells("A4","D1027",path_,"Untergrund")
 untergrund = [Untergrundraw[0],Untergrundraw[3]]
 
-data  = getTableFromCells("A5","B1028",path_,"K2CO3")
+data  = getTableFromCells("A5","B1028",path_,"Tschernobil")
 data = [calEnergie(np.array(data[0])),np.array(data[1])-np.array(untergrund[1])]
 
 
-xEn_start = 1372
-xEn_end = 1527
-hitNum =0
-for i in range(len(data[0])):
-    if xEn_start < data[0][i] < xEn_end:
-        hitNum += data[1][i]
 
-print("Hits ausgelöst durch Kalium :",hitNum)
 fig, ax = plt.subplots()
 
 
 ax.grid()
-
-ax.plot(data[0],data[1],color= COLOR_STYLE[0],label = "K2CO3")
-ax.axvline(calEnergie(484.9),label= f"peak bei {round_errtex(calEnergie(484.9),abs(calEnergie(8.7)+27.1))} KeV",color = "black")
+ax.plot(data[0],data[1],color= COLOR_STYLE[0],label = "Graspellets aus Tschernobil")
+ax.axvline(calEnergie(485.7),label= f"peak bei {round_errtex(calEnergie(485.7),abs(calEnergie(8)+27.1))} KeV (K-40)",color = "black")
+ax.axvline(calEnergie(226.9),label= f"peak bei {round_errtex(calEnergie(226.9),abs(calEnergie(5.5)+27.1))} KeV (Cs-137)",color = "blue")
 ax.set_xlabel(X_LABEL)
 ax.set_ylabel(Y_LABEL)
 ax.set_xlim(X_START,X_END)

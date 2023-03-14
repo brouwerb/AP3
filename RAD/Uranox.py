@@ -10,18 +10,18 @@ import matplotlib.ticker as ticker
 
 
 COLOR_STYLE = ["red","green","blue","orange","violet","darkgreen"]
-Y_LABEL = r"Hits in 10 min"
+Y_LABEL = r"Hits in 5 min"
 X_LABEL = r"Energie in KeV"
 X_START =0 
 Y_START =0
-X_END = 2500
-Y_END = 150
+X_END = 2000
+Y_END = 8500
 
 X_MAJOR_TICK = 500
-Y_MAJOR_TICK =20
+Y_MAJOR_TICK =1000
 X_MINOR_TICK = 100
-Y_MINOR_TICK = 5
-SAVE_AS = "./RAD/plots/K2CO3.pdf"
+Y_MINOR_TICK = 200
+SAVE_AS = "./RAD/plots/Uranox.pdf"
 
 path_ = "./RAD/RAD.xls"
 
@@ -36,25 +36,19 @@ def calEnergie (Kanal):
 Untergrundraw = getTableFromCells("A4","D1027",path_,"Untergrund")
 untergrund = [Untergrundraw[0],Untergrundraw[3]]
 
-data  = getTableFromCells("A5","B1028",path_,"K2CO3")
+data  = getTableFromCells("A5","B1028",path_,"U+TH")
 data = [calEnergie(np.array(data[0])),np.array(data[1])-np.array(untergrund[1])]
 
 
-xEn_start = 1372
-xEn_end = 1527
-hitNum =0
-for i in range(len(data[0])):
-    if xEn_start < data[0][i] < xEn_end:
-        hitNum += data[1][i]
-
-print("Hits ausgelöst durch Kalium :",hitNum)
 fig, ax = plt.subplots()
 
 
 ax.grid()
 
-ax.plot(data[0],data[1],color= COLOR_STYLE[0],label = "K2CO3")
-ax.axvline(calEnergie(484.9),label= f"peak bei {round_errtex(calEnergie(484.9),abs(calEnergie(8.7)+27.1))} KeV",color = "black")
+ax.plot(data[0],data[1],color= COLOR_STYLE[0],label = "Uranoxid",zorder = 1)
+peaks =   getTableFromCells("C2","G3",path_,"U+TH")
+for i in peaks:
+    ax.axvline(calEnergie(i[0]),label= f"peak bei {round_errtex(calEnergie(i[0]),abs(calEnergie(i[1])))} KeV",color = "black",linewidth = 0.8)
 ax.set_xlabel(X_LABEL)
 ax.set_ylabel(Y_LABEL)
 ax.set_xlim(X_START,X_END)
