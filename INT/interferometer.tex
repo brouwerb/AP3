@@ -38,7 +38,7 @@
 
     \section{Experimenteller Aufbau}
 
-    Das Michelson Interferometer, wie in der Abbildung \ref{fig:auf} gezeigt, besteht aus einem Laser, der durch einen halbdurchsichtigen Spiegel als Strahlteiler in zwei unterschiedliche Wege aufgespalten wird. Am Ende jedes weges steht ein Spiegel, der das Laserlicht wieder zurück zum Strahlteiler reflektiert. In unserem Versuchsaufbau war einer dieser Spiegel durch eine Schraube verschiebbar. Beide zurückgeworfenen Strahlen interferieren zu einem von den optischen Weglängen der zwei Arme abhängigem Interferenzmuster.
+    Das Michelson Interferometer, wie in der Abbildung \ref{fig:auf} gezeigt, besteht aus einem Laser, der durch einen halbdurchsichtigen Spiegel als Strahlteiler in zwei unterschiedliche Wege aufgespalten wird. Am Ende jedes Armes steht ein Spiegel, der das Laserlicht wieder zurück zum Strahlteiler reflektiert. In unserem Versuchsaufbau war einer dieser Spiegel durch eine Schraube verschiebbar. Beide zurückgeworfenen Strahlen interferieren zu einem von den optischen Weglängen der zwei Arme abhängigem Interferenzmuster.
 
     \begin{figure}
         \centering
@@ -80,7 +80,7 @@
     \section{Experimentelles Vorgehen}
 
     \subsection{Ganghöhe}
-    In diesem Experiment wurde die Ganghöhe der Schraube gezählt, mit der der Spiegel am ende einer der Arme der Interferrometer verschoben werden konnte. Dies wurde gemacht, indem die benötigte Umdrehung der Schraube gemessen wurde, um 100 Interferenzmaxima zu beobachten. Wir haben auch den Wert bei 50 Maxima aufgeschrieben. Aus diesen Werten lässt sich die Ganghöhe wie in \ref{sec:gang} beschrieben berechnen.
+    In diesem Experiment wurde die Ganghöhe der Schraube gezählt, mit der der Spiegel am ende einer der Arme der Interferrometer verschoben werden konnte. Dies wurde gemacht, indem drei mal die benötigte Umdrehung der Schraube gemessen wurde, um 100 Interferenzmaxima zu beobachten. Wir haben auch den Wert bei 50 Maxima aufgeschrieben. Aus diesen Werten lässt sich die Ganghöhe wie in \ref{sec:gang} beschrieben berechnen.
 
     \subsection{Brechungindex Luft}
     Bei diesem Versuch wurde in einen der Arme des Interferometer eine evakuierbare Kuvette platziert. Diese wurde bis zu einem relativen Druck von $-0.8 \si{\bar} $ lehrgepumpt und anschließend wurde bei jedem dritten Interferenzmaximum, welche durch das langsame Eindringen von Luft durch Undichtigkeiten im Aufbau entstanden, der aktuelle Luftdruck gemessen.
@@ -93,18 +93,18 @@
     \section{Ergebnisse}
     \subsection{Ganghöhe}
 
-    Aus den gemessenen Daten lässt sich mit der Gleichung \ref{eq:gang} eine Ganghöhe des Spiegels von
+    Aus den 3 Messreihen lässt sich mit der Gleichung \ref{eq:gang} eine Ganghöhe des Spiegels von
     \begin{align}
         g = 47.58(21) \si{\micro\metre}
     \end{align}
-    pro Schraubendrehung bestimmen. Als Fehler wurden wegen der analogen Messung eine Ungenauigkeit von $0.21$ Einheiten in der Schraubenstellung angenommen.  
+    pro Schraubendrehung bestimmen. So ist jeder Strich eine verschibung um etwa einen Mikrometer. Als Fehler wurden wegen der analogen Messung eine Ungenauigkeit von $0.21$ Einheiten in der Schraubenstellung angenommen. Die Abweichung zum Idealwert von $50 \si{\micro\meter}$ kann durch den Backlash bei der Drehung, ein verbiegen der Halterung durch einseitige Belastung bei Drehung mit dem Imbusschlüssel oder ein ungenaues Zählen erklärt werden.
     
    
     \subsection{Brechungsindex Luft}
-    Mit der Gleichung \ref{eq:n} und einer Küvettenlänge von $l = 49,4(1) \si{\milli\metre}$ konnte aus der Anzahl der Maxima die Relative Änderung des Brechungsex $\Delta n$ berechnet werden.
+    Mit der Gleichung \ref{eq:n} und einer Küvettenlänge von $l = 49,4(1) \si{\milli\metre}$ konnte aus der Anzahl der Maxima die relative Änderung des Brechungsex $\Delta n$ berechnet werden.
     Durch einen Fit der Formel \ref{eq:luft}, wie im Graphen \ref{fig:druck} gezeigt, kann die Proprtionalitätskonstante zwischen Brechungsindex und Luft $\chi$ und der Brechungsindex $n$
     \begin{align}
-        \chi = 7,52(11) \cdot 10^{-7} \si{\kelvin\per\pascal}
+        \chi = 7,52(11) \cdot 10^{-7} \si{\kelvin\per\pascal} \\
         n = 1 + \frac{7,52(11) \cdot 10^{-7} \si{\kelvin\per\pascal}}{T} \cdot p
     \end{align}
     bestimmt werden. Berücksichtigt wurden Unsicherheiten beim Luftdruck, bei der Längenmessung der evakuierten Kammer und bei der Temperatur, die zu Zeit der Messung $22.7(1) ^{\circ}C$ betrug. Als Theoriewert (Siehe \cite{theoluft}) konnte der Brechungsindex von Luft $n = 1.00027653$ bei $15 ^{\circ}C$, $101325 \si{\pascal}$ und $450$ ppm C02 gefunden werden. Aus diesen Werten lässt sich $\chi = 7,864 \cdot 10^{-7}  \si{\kelvin\per\pascal}$ berechnen, welches nahe beim von uns berechneten Wert, aber nicht im Konfidenzintervall liegt.
@@ -112,7 +112,7 @@
     \begin{figure}
         \centering
         \includegraphics[width=0.8\textwidth]{./plots/druck.pdf}
-        \caption{Druckabhängigkeit Brechungindex}
+        \caption{Druckabhänger Brechungindex}
         \label{fig:druck}
     \end{figure}
 
