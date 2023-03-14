@@ -39,7 +39,6 @@ untergrund = [Untergrundraw[0],Untergrundraw[3]]
 data  = getTableFromCells("A5","B1028",path_,"K2CO3")
 data = [calEnergie(np.array(data[0])),np.array(data[1])-np.array(untergrund[1])]
 
-print(data)
 
 
 
