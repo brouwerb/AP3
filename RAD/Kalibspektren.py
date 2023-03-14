@@ -9,7 +9,7 @@ from scipy import optimize
 import matplotlib.ticker as ticker
 
 
-
+COLOR_STYLE = ["red","green","blue","orange","violet","darkgreen"]
 Y_LABEL = r"Hits"
 X_LABEL = r"Kanäle"
 X_START =0 
@@ -40,7 +40,7 @@ fig, ax = plt.subplots()
 
 ax.grid()
 for i in range(len(data)-1):
-    ax.plot(data[0],data[i+1],label = elements[i])
+    ax.plot(data[0],data[i+1],label = elements[i],color= COLOR_STYLE[i])
 for i,I in enumerate(peaks[1]):
     if i == 0:
         ax.axvline(I,color = "black",label = "peaks",linewidth=0.8)
