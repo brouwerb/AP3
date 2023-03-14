@@ -1,0 +1,118 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts} %Matheschriften
+\usepackage{amssymb} %Mathesymbole
+%\usepackage{mathptmx} % Einstellung für Schriften und Sonderzeichen in mathematischen Umgebungen
+                        % ändert SChriftfont
+\usepackage{wasysym} % Stellt diverse Sonderzeichen bereit
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[section]{placeins}
+% allows for temporary adjustment of side margins
+\usepackage{changepage}
+\usepackage{rotating}
+
+
+\usepackage[ngerman]{babel}
+\addto\captionsngerman{%
+ \renewcommand{\abstractname}{Einleitung}}
+
+\title{Versuch 2: Interferometer}
+\author{Team 4-11: Jascha Fricker, Benedict Brouwer}
+
+\begin{document}
+    \maketitle
+
+    \tableofcontents
+
+    \newpage
+
+    \section{Einleitung}
+
+    Interferometer werden im der Messtechnik für viele verschiedene Aufgaben benutzt. Das Micherlson-Interferometer ist eines der bekanntesten Arten von Interferometer, welches unter anderem beim Michelson-Morley Experiment zum Bestimmung der Äther-Geschwindigkeit benutzt wurde. In diesem Versuch benutzen wir es um den Brechungsindex von Plexiglas und Luft zu bestimmen.
+
+    \section{Theorie}
+    \subsection{Ganghöhenbestimmung}
+
+    Mithilfe der Formeln
+    \begin{align}
+        \Delta s = \frac{N \cdot \lambda}{2}
+    \end{align}4
+    kann man die Verschiebung des Spiegels $\Delta s$ durch die Anzahl der Maxima $N$ und berechnen. Für die Ganghöhe wollen wir den Abstand pro Einheit
+    \begin{align}
+        g = \frac{\Delta s}{\Delta x} = \frac{N \lambda}{2 \Delta x}
+    \end{align}
+    haben, wobei $x$ Anzahl der Umdrehungen ist. 
+
+    \subsection{Brechungsindex Luft}
+    Mit folgenden Formeln sind Brechungindex $n$, Druck $p$ und Anzahl gezählter Maxima $N$ verknüpft
+    \begin{align}
+        N \cdot \lambda &= 2 l \cdot \Delta n \\
+        n &= 1 + \frac{\chi}{T} p \label{eq:luft} \\ 
+        N \cdot \lambda &= 2 l \cdot \frac{\chi}{T} \Delta p
+    \end{align}
+    wobei $l$ die Länge der evakuierbaren Kammer ist.
+
+    \subsection{Brechungsindex Plexiglas}
+    Durch Drehung der Plexiglsscheibe mit Dicke $d$ um Winkel $\alpha$ kann der Brechungsindex $n$ bestimmt werden.
+    \begin{align}
+        N \cdot \lambda &= 2 \cdot h \cdot \left(1 - n - cos(\alpha) + \sqrt{n^2 - sin^2(\alpha)}\right)\label{fitplex} \\
+        tan(\alpha) &= \frac{x + c}{d} \label{Winkelum}
+    \end{align}
+    wobei $N$ die Anzahl an Maxima $x$ die Länge der Schraube und $d$ der Abstand der Schraube vom Drehpunkt ist.
+
+    \section{Ergebnisse}
+    \subsection{Ganghöhe}
+
+    Aus den gemessenen Daten lässt sich eine Ganghöhe des Spiegels von
+    \begin{align}
+        g = 19.03(9) \si{\nano\metre}
+    \end{align}
+    pro Einheit Schraubendrehung bestimmen. Als Fehler wurden wegen der analogen Messung eine Ungenauigkeit von $0.21$ Einheiten angenommen.  
+    
+   
+    \subsection{Brechungsindex Luft}
+
+    Durch einen Fit der Formel \ref{eq:luft}, wie im Graphen \ref{fig:druck} gezeigt, kann die Proprtionalitätskonstante zwischen Brechungsindex und Luft
+    \begin{align}
+        \chi = 7,52(11) \cdot 10^{-10} \si{\kelvin\per\pascal}
+    \end{align}
+    bestimmt werden. Berücksichtigt wurden Unsicherheiten beim Luftdruck, bei der Längenmessung der evakuierten Kammer und bei der Temperatur.
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{./plots/druck.pdf}
+        \caption{Druckabhängigkeit Brechungindex}
+        \label{fig:druck}
+    \end{figure}
+
+    \subsection{Brechungsindex der Plexiglasplatte}
+    Um den Brechungsindex einer Plexiglasplatte zu bestimmen wird diese auf einem rotierenden Tisch, dessen Winkel zum Strahl mit einer Arretierungsschraube eingestellt werden kann, montiert.
+    Aus den abgelesenen Werten kann mit \ref{Winkelum} und einer Helbelarmlänge von $d = 28$ mm Der Winkel zum Strahl berechnet werden.
+    Die gemessenen Werte wurden nun in Graph \ref{fig:plexiplot} mit Funktion \ref{fitplex} gefittet. Dabei erhielten wir für den Brechungsindex einen Wert von
+    \begin{align}
+        n = 1,46337(95)
+    \end{align}
+    was vergleichbar mit dem Literaturwert von $n_{lit} = 1,5007$ \cite[Siehe:]{refdat} ist.
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{./plots/plexi.pdf}
+
+        \caption{Durchlaufene Intensitätsmaxima in Bezug auf den Drehwinkel des Tisches}
+        \label{fig:plexiplot}
+    \end{figure}
+
+    \section{Diskussion}
+    Im Versuch mit dem Michelsen Interferometer konnte erfolgreich die Ganghöhe der Spiegelarretierungsschraube bestimmt werden.
+    Auch der Brechungsindex der Luft konnte als Funktion angegeben werden und liegt in einem sinvollen Bereich.
+    Bei der Bestimmung des Brechungsindex der Plexiglasscheibe wurde ein Wert bestimmt, der die richtige Größenordnung hat. Ob er genau stimmt, kann nicht überprüft werden, da das genaue Material nicht bekannt ist.
+    \bibliographystyle{plain}
+    \bibliography{literature}
+    % https://refractiveindex.info/?shelf=other&book=pmma_resists&page=Microchem495
+
+\end{document}
