@@ -58,7 +58,7 @@
         2 \cdot d \cdot \sin \theta = g \cdot sin \theta = n \lambda \\
         g = \frac{n \lambda}{sin \theta} \label{eq:gitter}
     \end{align}
-    Hierbei ist $d$ die Gitterkonstante, $\theta$ der Beugungswinkel und $\lambda$ die Wellenlänge des in diesem Winkel reflektierten Röntgenstrahls. Mit diesem Effekt kann das Röntgenspektrum bestimmt werden.
+    Hierbei ist $g$ die Gitterkonstante, $\theta$ der Beugungswinkel und $\lambda$ die Wellenlänge des in diesem Winkel reflektierten Röntgenstrahls. Mit diesem Effekt kann das Röntgenspektrum bestimmt werden.
 
     \subsection{Röntgenspektrum}
 
@@ -85,11 +85,18 @@
     \section{Ergebnisse}
 
     \subsection{Winkelunsicherheit}
-    Durch die verscheibung der Messreihen untereinander kann die Genauigkeit der Winkel bestimmt werden. Der Unterschied der gemessenen Winkel wird als Unischerheit der Winkelmessung benutzt. Aus der Verschiebung der zwei Messreihen im Graph von etwa $0,1^{\circ}$ kann eine Unsicherheit von etwa $0,1^{\circ}$ geschätzt werden. So ergibt sich eine gesamte Winkelunsicherheit von $0,15^{\circ}$.
+    Durch die verscheibung der Messreihen untereinander kann die Genauigkeit der Winkel bestimmt werden. Der Unterschied der gemessenen Winkel wird als Unischerheit der Winkelmessung benutzt. Aus der Verschiebung der zwei Messreihen im Graph \ref{fig:wink} von etwa $0,1^{\circ}$ kann eine Unsicherheit von etwa $0,1^{\circ}$ geschätzt werden. So ergibt sich eine gesamte Winkelunsicherheit von $0,15^{\circ}$.
 
-    \subsection{Röntgenspektrum}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{Winkelfehler.pdf}
+        \caption{Winkelfehler}
+        \label{fig:wink}
+    \end{figure}
 
-    Mithilfe der Drehkristallmethode konnte das Röntgenspektrum \ref{fig:roentgenspektrum} gemessen werden. Aus diesem wurden die Maxima der $K_{\alpha}$ und $K_{\beta}$ Linien ersten, zweiten und dritten Grades bestimmt. Die gemessenen Werte sind in der Tabelle \ref{tab:roentgenspektrum} aufgeführt. Aus diesen konnten die endgültigen Ergebnisse für Wellenlänge und Enegie der $K_{\alpha}$ und $K_{\beta}$ Linien berechnet werden. Die Ergebnisse sind in der Tabelle \ref{tab:linienerg} aufgeführt.
+    \subsection{Röntgenspektrum} \label{ront}
+
+    Mithilfe der Drehkristallmethode konnte das Röntgenspektrum (Graph \ref{fig:roentgenspektrum}) gemessen werden. Aus diesem wurden die Maxima der $K_{\alpha}$ und $K_{\beta}$ Linien ersten, zweiten und dritten Grades bestimmt. Die gemessenen Werte sind in der Tabelle \ref{tab:roentgenspektrum} aufgeführt. Aus diesen konnten die endgültigen Ergebnisse für Wellenlänge und Enegie der $K_{\alpha}$ und $K_{\beta}$ Linien berechnet werden. Die Ergebnisse sind in der Tabelle \ref{tab:linienerg} aufgeführt.
 
     \begin{table}
         \centering
@@ -106,8 +113,8 @@
 
     \begin{table}[h]
         \centering
-        \label{tab:roentgenspektrum}
-        \begin{tabular}{c|c|c|c}
+        
+        \begin{tabular}{c|c|c|c} \label{tab:roentgenspektrum}
         & \textbf{$n = 1$} & \textbf{$n = 2$} & \textbf{$n = 3$} \\ 
         \hline
         Winkel $K_{\alpha}$ in Grad & 7.15(15) & 14.50(15) & 22.10(15)\\ 
@@ -129,29 +136,29 @@
 
     \subsection{Absorbtionsfähigkeit}
 
-    Aus dem Emissionsspektrum ohne Zirkonium-Folie und aus dem mit Zirkoniumfolie kann die Wellenlängenabhängige Transmission mit \ref{eq:transmission} berechnet und in \ref{fig:trans} geplottet werden. In diesem Plot erkennt man Absorbtionskante und deren Eigenschaften
+    Aus dem Emissionsspektrum ohne Zirkonium-Folie und aus dem mit Zirkoniumfolie kann die Wellenlängenabhängige Transmission mit Gleichung (\ref{eq:transmission}) berechnet und in Plot \ref{fig:trans} geplottet werden. In diesem Plot erkennt man Absorbtionskante und deren Eigenschaften
     \begin{align}
-        \text{Wellenlänge} \lambda &= 67,7(13) \si{\pico\meter}\\
-        \text{Energie} E &= 18.31(35).
+        \text{Wellenlänge} \ \ \lambda &= 67,7(13) \si{\pico\meter}\\
+        \text{Energie} \ \ E &= 18.31(35) \text{keV}.
     \end{align}
 
     \begin{figure}
         \centering
         \includegraphics[width=0.8\textwidth]{Zirkonium.pdf}
-        \caption{Transmission}
+        \caption{Absorbtion}
         \label{fig:trans}
     \end{figure}
 
     \subsection{LiF-Kristall}
-    Durch die gemessen Winkel
+    Durch die Mittelwerte der zwei gemessen Winkelordnungen mit den Werten
     \begin{align}
         K_{\alpha} &= 10.053(84) \si{\degree} \\
         K_{\beta} &= 8.903(84) \si{\degree}
     \end{align}
-    der Linien im Röntgenspektrum des LiF Kristall (Siehe \ref{fig:LiF}) und die in vorher berechneten Wellenlängen der Linien kann mit Formel \ref{eq:gitter} die Gitterkonstante
+    der Linien im Röntgenspektrum des LiF Kristall (Siehe \ref{fig:LiF}) und die in \ref{ront} berechneten Wellenlängen der Linien kann mit Formel \ref{eq:gitter} die Gitterkonstante
     \begin{align}
         g_{LiF} = 404,7(38) \si{\pico\meter} \\
-        \text{Theoriewert} 402,6 \si{\pico\meter}
+        \text{Theoriewert \cite{lif} } 402,6 \si{\pico\meter}
     \end{align}
     des LiF-Kristalls bestimmt werden.
 
