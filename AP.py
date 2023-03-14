@@ -346,13 +346,38 @@ def croppArray(x,y):
             arr[1].append(y[i])
     return arr
 
-def getClosestPoint(x,arr):
+def getClosestPoint(x,arr,getIndex = False):
     dif = abs(arr[0][0]-x)
     index = 0
     for i,I in enumerate(arr[0]):
         if dif > abs(I-x):
             dif =  abs(I-x)
             index = i
-    return [arr[0][index],arr[1][index]]
+    if not getIndex:
+        return [arr[0][index],arr[1][index]]
+    else:
+        return index
+    
+def getExtrapolatedPoint(x,arr):
+    dif = x-arr[0][0]
+    index = 0
+    for i,I in enumerate(arr[0]):
+        if abs(dif) > abs(I-x):
+            dif =  I-x
+            index = i
+    
+    if dif<0:
+        p2 = [arr[0][index],arr[1][index]]
+        p1 = [arr[0][index+1],arr[1][index+1]]
+    if dif>=0:
+        p1 = [arr[0][index],arr[1][index]]
+        p2 = [arr[0][index+1],arr[1][index+1]]
+    print(p1,p2)
+    
+    verh =  (p2[0]-x)/(p2[0]-p1[0] )   # Zero division error?
+    print(verh)
+    ynew = p2[1]-(p2[1]-p1[1]) * verh
+
+    return [x,ynew]
         
 
