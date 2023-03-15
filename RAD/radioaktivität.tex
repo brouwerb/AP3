@@ -55,9 +55,9 @@
     \section{Ergebnisse}
     \subsection{Kallibrierung}
     Um die Energie der einfallenden Teilchen zu berechnen ist es zuerst nötig, den NaI-zähler zu kallirieren. Dazu wurden die Spektren von Cs-137, Na-22 und Co-60 gemessen und dessen Peaks bestimmt \ref{fig:Kalibspektren}. 
-    Anschliesend wurden die Kanalnummern $n$ der Peaks mit den charakteristischen Energien der einzelnen Proben in Graph \ref{fig:Kanal-Energie} geplottet und mittels einer Ausgleichsgeraden die Kallibrierungskurve bestimmt:
+    Anschliesend wurden die Kanalnummern $n$ der Peaks mit den charakteristischen Energien als auch der charakteristischen Energien von Doppelereignissen der einzelnen Proben in Graph \ref{fig:Kanal-Energie} geplottet und mittels einer Ausgleichsgeraden die Kallibrierungskurve bestimmt:
     \begin{align}
-        E(n) = 3,052(73) \cdot n - 27.1(31)
+        E(n) = 3,052(73) \cdot n - 27.1(31) KeV
     \end{align}
     
 
@@ -79,8 +79,14 @@
         \label{fig:Kanal-Energie}
     \end{figure}
 
-    \subsection{Strahlenbelastung durch die Cs-137 Probe}
-    Die untersuchte Cs-137 Probe besaß 1992 eine Aktivität $A$ von 133 \si[]{\kilo\becquerel}. mit 
+    \subsection{Strahlenbelastung durch die Cs-137 Probe in einem Jahr}
+    Die untersuchte Cs-137 Probe besaß 1992 eine Aktivität $A$ von 133 \si{\kilo\becquerel}. Seit 1992 ist etwa die Halbwertszeit von 30,2 Jahren vergangen. Also ist die Aktivität zur Zeit des Experiments $A(2023) = 166.5$ \siptions]{\kilo\becquerel}.
+    Um die Strahlenbelastung auf einen Mensch (Rechteck der Form $0,3\si{\meter} \cdot 1,7 \si{\meter}$) zu berechne, wird zunächst der Raumwinkel abgeschätzt mit $\Omega_{M} = \frac{A_{M}}{4\pi r^2} = 0,041$.
+    Daraus folgt für die absorbierte Strahlenenergie bei Annahme vollständiger Absorption und vernachlässing der Aktivitätsänderung im Laufe des Jahres:
+    \begin{align}
+        E_{M_a} = 166,5 \si{\kilo\becquerel}\cdot 1 \si{\year} \cdot 0,85 \cdot 662 \si{\kilo\elektron\volt} \cdot e \cdot \Omega_{M} = 0,0189 \si{\Joule}
+    \end{align}
+    Für einen 65 \si{\kilo\gram} schweren Menschen entspricht dies einer Strahlenbelastung von $\frac{E_{M_a}}{65\si{\kilo\gram}} = 0.291\si{\milli\sievert}$
 
     \section{Diskussion}
     \section{Fragen}
