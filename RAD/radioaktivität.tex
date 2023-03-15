@@ -37,8 +37,8 @@
     Die Zerfallsgleichungen beschreiben die Anzahl der Kerne N sowie die Aktivität $A$ verbunden mit der Halbwertszeit $T$
     \begin{align}
         N(t) &= N_0 \cdot e^{- \lambda t} \\
-        T &= \frac{\ln 2}{\lambda} \\
-        A(t) &= - \dv{N(t)}{t} = \lambda N(t) 
+        T &= \frac{\ln 2}{\lambda} \label{eq:Halbwertszeit}  \\ 
+        A(t) &= - \dv{N(t)}{t} = \lambda N(t) \label{Aktivität-halb}
     \end{align}
     
     \section{Versuchsaufbau und Druchführung}
@@ -53,6 +53,34 @@
     \end{figure}
 
     \section{Ergebnisse}
+    \subsection{Kallibrierung}
+    Um die Energie der einfallenden Teilchen zu berechnen ist es zuerst nötig, den NaI-zähler zu kallirieren. Dazu wurden die Spektren von Cs-137, Na-22 und Co-60 gemessen und dessen Peaks bestimmt \ref{fig:Kalibspektren}. 
+    Anschliesend wurden die Kanalnummern $n$ der Peaks mit den charakteristischen Energien der einzelnen Proben in Graph \ref{fig:Kanal-Energie} geplottet und mittels einer Ausgleichsgeraden die Kallibrierungskurve bestimmt:
+    \begin{align}
+        E(n) = 3,052(73) \cdot n - 27.1(31)
+    \end{align}
+    
+
+
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{./plots/Kalibspektren.pdf}
+
+        \caption{Spektren von Cs-137, Na-22 und Co-60 zur Kallibrierung}
+        \label{fig:Kalibspektren}
+    \end{figure}
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{./plots/Kanal-Energie.pdf}
+
+        \caption{Kalibrierungs Kurve des NaI-Zählers}
+        \label{fig:Kanal-Energie}
+    \end{figure}
+
+    \subsection{Strahlenbelastung durch die Cs-137 Probe}
+    Die untersuchte Cs-137 Probe besaß 1992 eine Aktivität $A$ von 133 \si[]{\kilo\becquerel}. mit 
 
     \section{Diskussion}
     \section{Fragen}
