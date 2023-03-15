@@ -22,7 +22,8 @@
 \addto\captionsngerman{%
  \renewcommand{\abstractname}{Einleitung}}
 
- \DeclareSIUnit\year{a}
+\DeclareSIUnit\year{a}
+\DeclareSIUnit\electron{e}
 
 \title{Versuch 3: Radioaktivität}
 \author{Team 4-11: Jascha Fricker, Benedict Brouwer}
@@ -100,7 +101,7 @@
         E_{M_a} = 166,5 \si{\kilo\becquerel}\cdot 1 \si{\year} \cdot 0,85 \cdot 662 \si{\kilo\electron\volt} \cdot e \cdot \Omega_{M} = 0,0189 \si{\joule}
     \end{align}
     Für einen 65 \si{\kilo\gram} schweren Menschen entspricht dies einer Strahlenbelastung von $\frac{E_{M_a}}{65\si{\kilo\gram}} = 0.291\si{\milli\sievert}$
-    \subsection{KaliumCarbonat}
+    \subsection{Kaliumcarbonat}
     In diesem Versuchsteil wurde das Spektrum einer Kaliumcarbonatprobe ($K_2CO_3$) wie in Graph \ref{fig:Kaspektrum} zu sehen bestimmt. Wie zu erwarten ist ein Peak bei $1445(26) \si{\kilo\electron\volt}$ zu sehen ist was mit Fehlerintervall mit dem Theoriewert von $1461 \si{\kilo\electron\volt}$ \ref{fig:zerf} übereinstimmt.
     Im Peak sind bei einem Messzeitraum von 10 Minuten $2114(46)$ Ereignisse registriert worden. Mit diesem Wert lässt sich mit 
     \begin{align}
@@ -115,7 +116,7 @@
         \centering
         \includegraphics[width=\textwidth]{Plots/K2CO3.pdf}
 
-        \caption{KaliumCarbonatspektrum abzgl. Hintergrundstrahlung}
+        \caption{Kaliumcarbonatspektrum abzgl. Hintergrundstrahlung}
         \label{fig:Kaspektrum}
     \end{figure}
 
@@ -129,6 +130,7 @@
         \label{fig:hintergrund}
     \end{figure}
     Es kann gut erkannt werden, dass das Blei einen großen Teil der Hintergrundstrahlung abschirmt.
+
     \subsubsection{Strahlenbelastung Hintergrundstrahlung}
     Durch die Abmessungen des Kristalls $d = h = 7,52 \si{\centi\metre}$ und dessen Dichte $p = 3,7 \si{\gram\per\cubic\centi\metre}$ kann die Masse $m$ des Kristalls berechnet werden.
     \begin{align}
@@ -141,9 +143,59 @@
 
 
     \subsection{Strahlenbelastung Gras}
-    Aufgabe 5
+    Abbildung \ref{fig:gras} zeigt die Strahlung einer Probe aus getrocknetem Gras, die in Bayern nach der Tchernobyl-Katastrophe gesammelt wurde. Hier sind klar die Peaks von $^{40}K$ und $^{137}Cs$ zu erkennen.
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Plots/Tschern.pdf}
+        \caption{Strahlung Grasprobe Hintergundsstrahlungkorrigiert}
+        \label{fig:gras}
+    \end{figure}
+    Wenn die gesammte Hits mit Energien programmatisch summiert werden, kommt man auf eine vom Detektor absorbierte Energie von $E = 23,8 \si{\giga\electron\volt}$ in 10 Minuten. Wir nehmen an, dass der Detektor etwa ein 6-tel der gesammten emittierten Strahlung absorbiert hat und ein Mensch etwa $m = 80 \si{\kilogram}$ wiegt. Außerdem wird die Abnahme der Aktivität innerhalt einer Woche vernachlässigt. Für die Energiedosis folgt
+    \begin{align}
+        D = \frac{6 E}{m} \frac{\text{Woche}}{10 \si{\min}} = 48 \si{\nano\sievert}
+    \end{align}
+    in einer Woche.
+
+
 
     \subsection{Uran und Thorium}
+    Das Spektrum von Uran wurde in Abbildung \ref{fig:uran} und das von Thorium in \ref{fig:thor} geplottet. In diesen können verschiede Linien erkannt werden, die in Tabelle \ref{tab:uran} mit den wahrscheinlich zugehörigen Elementen aufgeführt werden. Die Enerigewerte wurden mit denen in \ref{fig:zerf} gematcht.
+
+    \begin{table}
+        \centering
+        \begin{tabular}{c|c||c|c}
+            \multicolumn{2}{c}{Uran} & \multicolumn{2}{c}{Thorium} \\ \hline
+            Energie in $\si{\kilo\electron\volt}$ & Isotop & Energie in $\si{\kilo\electron\volt}$ & Isotop \\ \hline
+            77 & Blei & 74 & Blei \\ \hline
+            177 & Ra-226 & 232 & Pb-212 \\ \hline
+            757 & Pa-234 & 332 & Ac-228 \\ \hline
+            996 & Pa-234 & 586 & Ti-208 \\ \hline
+            & & 929 & Ac-228 \\ \hline
+            & & 1582 & Ac-228 + Ti208\\ \hline
+            & & 2557 & Ti- 208
+
+            
+        \end{tabular}
+        \caption{Isotope der Uran- und Thoriumproben}
+        \label{tab:uran}
+    \end{table}
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Plots/Uranox.pdf}
+        \caption{Uran}
+        \label{fig:uran}
+    \end{figure}
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Plots/Thorium.pdf}
+        \caption{Thorium}
+        \label{fig:thor}
+    \end{figure}
+
+    
+
     
     \subsection{Uhr}
 
@@ -151,7 +203,7 @@
 
     Aufgabe 6
 
-    
+
     \section{Fragen}
     \begin{enumerate}
         \item Ein Elektronvolt ist die Menge an kinetischer Energie, die ein einzelnes Elektron gewinnt oder verliert, wenn es sich von der Ruhe aus durch einen elektrischen Potentialunterschied von einem Volt im Vakuum beschleunigt.
@@ -166,7 +218,7 @@
         \item Dieses Verhalten kann durch die Erzeugung von Tochterkernen erklärt werden. Wenn ein langlebiger radioaktiver Kern wie Ra zerfällt, erzeugt er Tochterkerne, die ebenfalls radioaktiv sein können. Diese Tochterkerne können ihrerseits zerfallen und weitere Tochterkerne erzeugen.
         Wenn das Präparat frisch gereinigt wurde, gibt es zunächst keine Tochterkerne. Die Aktivität des Präparats steigt daher zunächst an, da immer mehr Tochterkerne erzeugt werden. Sobald jedoch eine ausreichende Anzahl von Tochterkernen vorhanden ist, beginnen diese ebenfalls zu zerfallen. Dies führt dazu, dass die Aktivität des Präparats nahezu konstant bleibt, da die Erzeugung neuer Tochterkerne durch den Zerfall der vorhandenen Tochterkerne ausgeglichen wird.
         Erst wenn die Anzahl der langlebigen Ra-Kerne signifikant abnimmt, beginnt sich die Abnahme der Aktivität durch das Zerfallsgesetz bemerkbar zu machen.
-        \item \begin{itemize} \item $\alpha$-Strahlung sind Heliumkerne mit einer geringen Reichweite und einer hohen Ionisationsfähigkeit. Sie können leicht durch eine Schicht aus Papier oder Kunststoff abgeschirmt werden. \item $\beta$-Strahlung sind Elektronen oder Positronen mit einer mittleren Reichweite und einer mittleren Ionisationsfähigkeit. Sie können durch einige Millimeter aus Aluminium oder Kunststoff abgeschirmt werden. Blei ist manchmal unwirksam, da es sekundäre Strahlung erzeugen kann. \item $\gamma$-Strahlung sind hochenergetische Photonen mit einer langen Reichweite und einer geringen Ionisationsfähigkeit. Sie können nur durch dicke Schichten aus Blei oder Beton abgeschirmt werden. Die Abschirmung hängt von der Dicke und dem Material des Absorbers ab. \item Kosmische Strahlung sind hochenergetische Teilchen aus dem Weltraum mit einer sehr langen Reichweite und einer sehr hohen Ionisationsfähigkeit. Sie können nicht vollständig abgeschirmt werden, aber einige Strategien zur Verringerung der Exposition sind: im Inneren bleiben, Fenster und Türen schließen, sich duschen oder exponierte Körperteile mit einem feuchten Tuch abwischen, abgefülltes Wasser trinken und Lebensmittel in versiegelten Behältern essen, Magnete oder andere Materialien verwenden, um die Strahlung abzulenken oder zu absorbieren, die individuellen Dosen überwachen und die Missionsdauer begrenzen, Teilchenbeschleuniger verwenden, um die Strahlenwirkung zu simulieren und zu testen8. \end{itemize}
+        \item \begin{itemize} \item $\alpha$-Strahlung sind Heliumkerne mit einer geringen Reichweite und einer hohen Ionisationsfähigkeit. Sie können leicht durch eine Schicht aus Papier oder Kunststoff abgeschirmt werden. \item $\beta$-Strahlung sind Elektronen oder Positronen mit einer mittleren Reichweite und einer mittleren Ionisationsfähigkeit. Sie können durch einige Millimeter aus Aluminium oder Kunststoff abgeschirmt werden. Blei ist manchmal unwirksam, da es sekundäre Strahlung erzeugen kann. \item $\gamma$-Strahlung sind hochenergetische Photonen mit einer langen Reichweite und einer geringen Ionisationsfähigkeit. Sie können nur durch dicke Schichten aus Blei oder Beton abgeschirmt werden. Die Abschirmung hängt von der Dicke und dem Material des Absorbers ab. \item Kosmische Strahlung sind hochenergetische Teilchen aus dem Weltraum mit einer sehr langen Reichweite und einer sehr hohen Ionisationsfähigkeit. Sie können nicht vollständig abgeschirmt werden, aber einige Strategien zur Verringerung der Exposition sind: im Inneren bleiben, Fenster und Türen schließen, sich duschen oder exponierte Körperteile mit einem feuchten Tuch abwischen, abgefülltes Wasser trinken und Lebensmittel in versiegelten Behältern essen, Magnete oder andere Materialien verwenden, um die Strahlung abzulenken oder zu absorbieren, die individuellen Dosen überwachen und die Missionsdauer begrenzen, Teilchenbeschleuniger verwenden, um die Strahlenwirkung zu simulieren und zu testen. \end{itemize}
         \item Die Linien bei 2615 keV, 2104 keV und 1593 keV sind Gammastrahlen, die von Thorium und seinen Zerfallsprodukten emittiert werden. Thorium ist ein natürlich radioaktives Element, das Gammastrahlen abgibt, wenn es zerfällt \cite{thorium_gamma_spectrometry} \cite{radionuclide_basics_thorium}. Die Gammastrahlen haben verschiedene Energien, die von den Übergängen der angeregten Kerne abhängen \cite{gamma-ray_spectrometer}. Die Linien bei 2615 keV und 1593 keV stammen von Thallium-208, einem Zerfallsprodukt von Thorium-232 \cite{analysis_of_uranium_and_thorium_lines} \cite{the_th-232_decay_chain}. Die Linie bei 2104 keV stammt von Blei-212, einem weiteren Zerfallsprodukt von Thorium-232 \cite{the_th-232_decay_chain}.
         \item \begin{enumerate} \item Ein $\gamma$-Quant fällt in den NaI-Kristall und löst ein Photoelektron aus einem Atom des Kristalls aus. \item Das Photoelektron erzeugt weitere Elektronen durch Ionisation. Die Sekundärelektronen regen den dotierten Thallium-Teil des Kristalls an, der niederenergetische Photonen aussendet. \item Die Photonen treffen auf die Photokathode des Photomultipliers und lösen Photoelektronen aus. Diese Elektronen werden durch eine Reihe von Dynoden verstärkt, die jeweils eine höhere Spannung als die vorherige haben. \item Am Ende des Photomultipliers entsteht ein elektrischer Impuls, der proportional zur Energie des ursprünglichen $\gamma$-Quants ist. \item Der Impuls wird an das Messgerät weitergeleitet und in einen Kanal auf dem Bildschirm gezählt. Der Kanal entspricht der Energie des $\gamma$-Quants. \end{enumerate}
     \end{enumerate}

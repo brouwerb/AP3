@@ -39,6 +39,8 @@ untergrund = [Untergrundraw[0],Untergrundraw[3]]
 data  = getTableFromCells("A5","B1028",path_,"Tschernobil")
 data = [calEnergie(np.array(data[0])),np.array(data[1])-np.array(untergrund[1])]
 
+print(sum(data[1]), sum([data[0][i]*data[1][i] for i in range(len(data[1]))]))
+
 
 
 fig, ax = plt.subplots()

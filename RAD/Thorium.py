@@ -14,14 +14,14 @@ Y_LABEL = r"Hits in 5 min"
 X_LABEL = r"Energie in KeV"
 X_START =0 
 Y_START =0
-X_END = 2000
+X_END = 3000
 Y_END = 9500
 
 X_MAJOR_TICK = 500
 Y_MAJOR_TICK =1000
 X_MINOR_TICK = 100
 Y_MINOR_TICK = 200
-SAVE_AS = "./RAD/plots/Thorium.pdf"
+SAVE_AS = "./RAD/Plots/Thorium.pdf"
 
 path_ = "./RAD/RAD.xls"
 
