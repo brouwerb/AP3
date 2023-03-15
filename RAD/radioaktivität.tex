@@ -22,7 +22,8 @@
 \addto\captionsngerman{%
  \renewcommand{\abstractname}{Einleitung}}
 
- \DeclareSIUnit\year{a}
+\DeclareSIUnit\year{a}
+\DeclareSIUnit\electron{e}
 
 \title{Versuch 3: Radioaktivität}
 \author{Team 4-11: Jascha Fricker, Benedict Brouwer}
@@ -93,22 +94,22 @@
     \end{figure}
 
     \subsection{Strahlenbelastung durch die Cs-137 Probe in einem Jahr}
-    Die untersuchte Cs-137 Probe besaß 1992 eine Aktivität $A$ von 133 \si{\kilo\becquerel}. Seit 1992 ist etwa die Halbwertszeit von 30,2 Jahren vergangen. Also ist die Aktivität zur Zeit des Experiments $A(2023) = 166.5$ \siptions]{\kilo\becquerel}.
-    Um die Strahlenbelastung auf einen Mensch (Rechteck der Form $0,3\si{\meter} \cdot 1,7 \si{\meter}$) zu berechne, wird zunächst der Raumwinkel abgeschätzt mit $\Omega_{M} = \frac{A_{M}}{4\pi r^2} = 0,041$.
+    Die untersuchte Cs-137 Probe besaß 1992 eine Aktivität $A = 133 \si{\kilo\becquerel}$. Seit 1992 ist etwa die Halbwertszeit von 30,2 Jahren vergangen. Also ist die Aktivität zur Zeit des Experiments $A(2023) = 166.5 \si{\kilo\becquerel}$.
+    Um die Strahlenbelastung auf einen Mensch (Rechteck der Form $0,3\si{\meter} \cdot 1,7 \si{\meter}$) zu berechnen, wird zunächst der Raumwinkel abgeschätzt mit $\Omega_{M} = \frac{A_{M}}{4\pi r^2} = 0,041$.
     Daraus folgt für die absorbierte Strahlenenergie bei Annahme vollständiger Absorption und vernachlässing der Aktivitätsänderung im Laufe des Jahres:
     \begin{align}
-        E_{M_a} = 166,5 \si{\kilo\becquerel}\cdot 1 \si{\year} \cdot 0,85 \cdot 662 \si{\kilo\elektron\volt} \cdot e \cdot \Omega_{M} = 0,0189 \si{\Joule}
+        E_{M_a} = 166,5 \si{\kilo\becquerel}\cdot 1 \si{\year} \cdot 0,85 \cdot 662 \si{\kilo\electron\volt} \cdot e \cdot \Omega_{M} = 0,0189 \si{\joule}
     \end{align}
     Für einen 65 \si{\kilo\gram} schweren Menschen entspricht dies einer Strahlenbelastung von $\frac{E_{M_a}}{65\si{\kilo\gram}} = 0.291\si{\milli\sievert}$
     \subsection{KaliumCarbonat}
-    In diesem Versuchsteil wurde das Spektrum einer Kaliumcarbonatprobe ($K_2CO_3$) wie in Graph \ref{fig:Kaspektrum} zu sehen bestimmt. Wie zu erwarten ist ein Peak bei 1445(26) \si{\kilo\elektron\volt} zu sehen ist was mit Fehlerintervall mit dem Theoriewert von 1461 \si{\kilo\elektron\volt} \ref{fig:zerf} übereinstimmt.
-    Im Peak sind bei einem Messzeitraum von 10 Minuten 2114(46) Ereignisse registriert worden. Mit diesem Wert lässt sich mit 
+    In diesem Versuchsteil wurde das Spektrum einer Kaliumcarbonatprobe ($K_2CO_3$) wie in Graph \ref{fig:Kaspektrum} zu sehen bestimmt. Wie zu erwarten ist ein Peak bei $1445(26) \si{\kilo\electron\volt}$ zu sehen ist was mit Fehlerintervall mit dem Theoriewert von $1461 \si{\kilo\electron\volt}$ \ref{fig:zerf} übereinstimmt.
+    Im Peak sind bei einem Messzeitraum von 10 Minuten $2114(46)$ Ereignisse registriert worden. Mit diesem Wert lässt sich mit 
 
 
 
     \begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{./plots/K2CO3.pdf.pdf}
+        \includegraphics[width=\textwidth]{Plots/K2CO3.pdf}
 
         \caption{KaliumCarbonatspektrum abzgl. Hintergrundstrahlung}
         \label{fig:Kaspektrum}
@@ -135,8 +136,18 @@
     \end{align}
 
 
+    \subsection{Strahlenbelastung Gras}
+    Aufgabe 5
 
-    \section{Diskussion}
+    \subsection{Uran und Thorium}
+    
+    \subsection{Uhr}
+
+    \subsection{Höhenstrahlung}
+
+    Aufgabe 6
+
+    
     \section{Fragen}
     \begin{enumerate}
         \item Ein Elektronvolt ist die Menge an kinetischer Energie, die ein einzelnes Elektron gewinnt oder verliert, wenn es sich von der Ruhe aus durch einen elektrischen Potentialunterschied von einem Volt im Vakuum beschleunigt.
