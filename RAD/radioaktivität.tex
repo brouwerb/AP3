@@ -22,8 +22,7 @@
 \addto\captionsngerman{%
  \renewcommand{\abstractname}{Einleitung}}
 
-\DeclareSIUnit\year{a}
-\DeclareSIUnit\electron{e}
+ \DeclareSIUnit\year{a}
 
 \title{Versuch 3: Radioaktivität}
 \author{Team 4-11: Jascha Fricker, Benedict Brouwer}
@@ -43,7 +42,7 @@
         T &= \frac{\ln 2}{\lambda} \label{eq:Halbwertszeit}  \\ 
         A(t) &= - \dv{N(t)}{t} = \lambda N(t) \label{Aktivität-halb}
     \end{align}
-
+    
     \subsection{Zerfallreihen}
     In der Abbildung \ref{fig:zerf} können die Zerfallsenergien und Zerfallsreihen einiger der in diesem Praktikum genutztden radioaktiven Stoffe gefunden werden.
 
@@ -104,6 +103,11 @@
     \subsection{KaliumCarbonat}
     In diesem Versuchsteil wurde das Spektrum einer Kaliumcarbonatprobe ($K_2CO_3$) wie in Graph \ref{fig:Kaspektrum} zu sehen bestimmt. Wie zu erwarten ist ein Peak bei $1445(26) \si{\kilo\electron\volt}$ zu sehen ist was mit Fehlerintervall mit dem Theoriewert von $1461 \si{\kilo\electron\volt}$ \ref{fig:zerf} übereinstimmt.
     Im Peak sind bei einem Messzeitraum von 10 Minuten $2114(46)$ Ereignisse registriert worden. Mit diesem Wert lässt sich mit 
+    \begin{align}
+        N_{K-40} = \frac{0,001 \cdot m}{2 \cdot M_{K} + M_{C} + 3 \cdot M_{O}}
+    \end{align}
+    Wobei $M_{K} = 39 \si{\atomicmassunit}, M_{C} = 12 \si{\atomicmassunit}, M_{O} = 16 \si{\atomicmassunit}$ die Masse $m = 0,1 \si{\kilo\gram}$
+
 
 
 
