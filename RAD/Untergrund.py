@@ -21,7 +21,7 @@ X_MAJOR_TICK = 500
 Y_MAJOR_TICK =200
 X_MINOR_TICK = 100
 Y_MINOR_TICK = 50
-SAVE_AS = "./RAD/plots/Untergrund.pdf"
+SAVE_AS = "./RAD/Plots/Untergrund.pdf"
 
 path_ = "./RAD/RAD.xls"
 
@@ -35,6 +35,8 @@ def calEnergie (Kanal):
 
 rawdata = getTableFromCells("A4","D1027",path_,"Untergrund")
 data = [[calEnergie(i) for i in rawdata[0]],rawdata[1],rawdata[3]]
+
+print(sum(data[1]), sum(data[2]), sum([data[0][i]*data[1][i] for i in range(len(data[1]))]), sum([data[0][i]*data[2][i] for i in range(len(data[1]))]))
 
 
 fig, ax = plt.subplots()

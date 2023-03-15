@@ -22,6 +22,8 @@
 \addto\captionsngerman{%
  \renewcommand{\abstractname}{Einleitung}}
 
+ \DeclareSIUnit\year{a}
+
 \title{Versuch 3: Radioaktivität}
 \author{Team 4-11: Jascha Fricker, Benedict Brouwer}
 
@@ -40,6 +42,17 @@
         T &= \frac{\ln 2}{\lambda} \label{eq:Halbwertszeit}  \\ 
         A(t) &= - \dv{N(t)}{t} = \lambda N(t) \label{Aktivität-halb}
     \end{align}
+
+    \subsection{Zerfallreihen}
+    In der Abbildung \ref{fig:zerf} können die Zerfallsenergien und Zerfallsreihen einiger der in diesem Praktikum genutztden radioaktiven Stoffe gefunden werden.
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Screenshot 2023-03-14 5.37.47 PM.png}
+
+        \caption{$\gamma$-Energieen einiger Stoffe, Quelle: \cite{RAD}}
+        \label{fig:zerf}
+    \end{figure}
     
     \section{Versuchsaufbau und Druchführung}
 
@@ -65,7 +78,7 @@
 
     \begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{./plots/Kalibspektren.pdf}
+        \includegraphics[width=\textwidth]{Plots/Kalibspektren.pdf}
 
         \caption{Spektren von Cs-137, Na-22 und Co-60 zur Kallibrierung}
         \label{fig:Kalibspektren}
@@ -73,14 +86,35 @@
 
     \begin{figure}[!h]
         \centering
-        \includegraphics[width=\textwidth]{./plots/Kanal-Energie.pdf}
+        \includegraphics[width=\textwidth]{Plots/Kanal-Energie.pdf}
 
-        \caption{Kalibrierungs Kurve des NaI-Zählers}
+        \caption{Kalibrierungskurve des NaI-Zählers}
         \label{fig:Kanal-Energie}
     \end{figure}
 
     \subsection{Strahlenbelastung durch die Cs-137 Probe}
     Die untersuchte Cs-137 Probe besaß 1992 eine Aktivität $A$ von 133 \si[]{\kilo\becquerel}. mit 
+
+    \subsection{Hintergundstrahlung}
+    Um die Hintergundstrahlung zu bestimmen wurden je 10 min mit und ohne Bleiabschirmung und ohne Probe gemessen. Die zwei Spektren wurden in Abbildung \ref{fig:hintergrund} geplottet.
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Plots/Untergrund.pdf}
+        \caption{Hintergundstrahlung}
+        \label{fig:hintergrund}
+    \end{figure}
+    Es kann gut erkannt werden, dass das Blei einen großen Teil der Hintergrundstrahlung abschirmt.
+    \subsubsection{Strahlenbelastung Hintergrundstrahlung}
+    Durch die Abmessungen des Kristalls $d = h = 7,52 \si{\centi\metre}$ und dessen Dichte $p = 3,7 \si{\gram\per\cubic\centi\metre}$ kann die Masse $m$ des Kristalls berechnet werden.
+    \begin{align}
+        m = p \cdot \pi \cdot \frac{d^2}{4} \cdot h =  1,24 \si{\kilogram}
+    \end{align}
+    Die gemessene Summe aller Hits ohne Bleiabschirmung in den $t = 10$ min $N_{Hintergrund} = 101110$. Durch die Faustformel ergibt dies etwa $ E = 10 \si{\giga\electronvolt}$. Aus genauer Berechnung ergeben sich $E = 31,1 \si{\giga\electronvolt}$. Wir rechnen aber mit erster Angabe weiter. Es gilt
+    \begin{align}
+        \frac{D}{t} = \frac{E}{mt} = 67,9 \si{\micro\sievert\per\year}
+    \end{align}
+
+
 
     \section{Diskussion}
     \section{Fragen}
