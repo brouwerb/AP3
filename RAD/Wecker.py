@@ -46,7 +46,7 @@ fig, ax = plt.subplots()
 ax.grid()
 
 ax.plot(data[0],data[1],color= COLOR_STYLE[0],label = "radioaktiver Wecker",zorder = 1)
-peaks =   getTableFromCells("A2","L3",path_,"Wecker")
+peaks =   getTableFromCells("B2","L3",path_,"Wecker")
 for i in peaks:
     ax.axvline(calEnergie(i[0]),label= f"peak bei {round_errtex(calEnergie(i[0]),abs(calEnergie(i[1])))} KeV",color = "black",linewidth = 0.8)
 ax.set_xlabel(X_LABEL)
