@@ -22,9 +22,9 @@
 \addto\captionsngerman{%
  \renewcommand{\abstractname}{Einleitung}}
 
-\DeclareSIUnit\year{a}
+ \DeclareSIUnit\year{a}
 \DeclareSIUnit\electron{e}
-\DeclareSIUnit\atomicmassunit{amu}
+ \DeclareSIUnit\atomicmassunit{amu}
 
 \title{Versuch 3: Radioaktivität}
 \author{Team 4-11: Jascha Fricker, Benedict Brouwer}
@@ -99,7 +99,7 @@
     Um die Strahlenbelastung auf einen Mensch (Rechteck der Form $0,3\si{\meter} \cdot 1,7 \si{\meter}$) zu berechnen, wird zunächst der Raumwinkel abgeschätzt mit $\Omega_{M} = \frac{A_{M}}{4\pi r^2} = 0,041$.
     Daraus folgt für die absorbierte Strahlenenergie bei Annahme vollständiger Absorption und vernachlässing der Aktivitätsänderung im Laufe des Jahres:
     \begin{align}
-        E_{M_a} = 166,5 \si{\kilo\becquerel}\cdot 1 \si{\year} \cdot 0,85 \cdot 662 \si{\kilo\electron\volt} \cdot e \cdot \Omega_{M} = 0,0189 \si{\joule}
+        E_{M_a} \approx 167 \si{\kilo\becquerel}\cdot 1 \si{\year} \cdot 0,85 \cdot 662 \si{\kilo\electron\volt} \cdot e \cdot \Omega_{M} \approx 0,0189 \si{\joule}
     \end{align}
     Für einen 65 \si{\kilo\gram} schweren Menschen entspricht dies einer Strahlenbelastung von $\frac{E_{M_a}}{65\si{\kilo\gram}} = 0.291\si{\milli\sievert}$
     \subsection{Kaliumcarbonat}
@@ -116,10 +116,7 @@
         \lambda = 1,760 \cdot 10^{-17} \si{1\per\second}
         A_{theo} = 767.9  \si{\becquerel}
     \end{align}
-    Aus den gemessenen Daten folgt mit \ref{eq:Aktivität-halb} für die Aktivität $A=$
-
-
-
+    Aus den gemessenen Daten folgt mit \ref{eq:Aktivität-halb} für die Aktivität $A=3.52 \si{\becquerel}$. Dieser große Untersched, lässt sich vermutlich erklären durch die Tatsache, dass nur ein kleiner Teil der Strahlung vom NaI-Zähler detektiert wird.
     \begin{figure}[!h]
         \centering
         \includegraphics[width=\textwidth]{Plots/K2CO3.pdf}
@@ -211,7 +208,7 @@
 
     Aufgabe 6
 
-
+    
     \section{Fragen}
     \begin{enumerate}
         \item Ein Elektronvolt ist die Menge an kinetischer Energie, die ein einzelnes Elektron gewinnt oder verliert, wenn es sich von der Ruhe aus durch einen elektrischen Potentialunterschied von einem Volt im Vakuum beschleunigt.
