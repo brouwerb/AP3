@@ -143,7 +143,7 @@
     \end{align}
     Die gemessene Summe aller Hits ohne Bleiabschirmung in den $t = 10$ min $N_{Hintergrund} = 101110$. Durch die Faustformel ergibt dies etwa $ E = 10 \si{\giga\electronvolt}$. Aus genauer Berechnung ergeben sich $E = 31,1 \si{\giga\electronvolt}$. Wir rechnen aber mit erster Angabe weiter. Es gilt
     \begin{align}
-        \frac{D}{t} = \frac{E}{mt} = 67,9 \si{\micro\sievert\per\year}
+        \frac{D}{t} = \frac{E}{mt} = 67,9 \si{\micro\sievert\per\year} \label{eq:HintergrundZuSiv}
     \end{align}
 
 
@@ -239,8 +239,58 @@
     \end{figure}
 
     \subsection{Höhenstrahlung}
+    Um Höhenstrahlung welche aus sehr viel höher energeitschen Teilchen besteht zu detektieren muss zunächst der NaI-Zähler erneut kallibriert werden. 
+    Dazu wird das Co-60 Spektrum in einem anderen Spannungsbereich aufgenommen (siehe \ref{fig:Co-60spekt}). Mit den Kanalnummern $n$ der Peaks und den bekannten charakteristischen Energien des Co-60 kann nun erneut eine Kallibrierungskurve \ref{fig:Höhenkalib} erstellt werden:
+    \begin{align}
+        E(n) = 48,80(46) \cdot n + 8(17)
+    \end{align}
+    Nun wurde das Spektrum der Höhenstrahlung für 2 Stunden gemessen und in Graph \ref{fig:Höhenspekt} geplottet. Die Ereignisse der einzelnen Kanäle in hunderter Schritten sind in Tabelle \ref{tab:Höhenereig} veranschaulicht.
+    Dabei wurde Kanal 0-99 vernachlässigt, da dort hauptsächlich die Strahlung radioaktiver Nukleide auftritt. Insgesamt wurde im Messzeitraum eine aufsummierte Energie von $2,219(26) \cdot 10^{11} \si{\electron\volt}$ detektiert.
+    Unter der Annahme, dass ein Kilogramm Detektor gleich viel Absorbiert wie ein Kilogramm Mensch kann daraus mit Formel \ref{eq:HintergrundZuSiv} die Strahlenbelastund der Höhenstrahlung berechnet werden zu $E = 0,1225(14) \si{\milli\sievert\per\year}$
+    Dieser Wert ist verglichen mit dem Literaturwert ($E = 0,3 \si{\milli\sievert\per\year}$) zwar etwas hoch, liegt aber in der gleichen Größenordnung \cite{cosmic_radiation}.
 
-    Aufgabe 6
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Plots/Cobalt-Höhen.pdf}
+        \caption{Kalibrierungsspektrum mit Co-60}
+        \label{fig:Co-60spekt}
+    \end{figure}
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Plots/Cobalt-Kalib.pdf}
+        \caption{Kalibrierungskurve für Höhenstrahlung}
+        \label{fig:Höhenkalib}
+    \end{figure}
+
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[width=\textwidth]{Plots/Höhenstrahlung.pdf}
+        \caption{Spektrum der Höhenstrahlung}
+        \label{fig:Höhenspekt}
+    \end{figure}
+
+    \begin{table}
+        \centering
+        \begin{tabular}{c|c}
+            
+            Kanalbereich & Anzahl der Ereignisse\\ \hline
+            100 - 200 & 1687.0\\  \hline
+            200 - 300 & 1235.0\\ \hline
+            300 - 400 & 1099.0\\ \hline
+            400 - 500 & 1033.0\\ \hline
+            500 - 600 & 1055.0\\ \hline
+            600 - 700 & 1356.0\\ \hline
+            700 - 800 & 1149.0\\ \hline
+            800 - 900 & 590.0\\ \hline
+            900 - 1000  & 274.0\\ \hline
+
+            
+        \end{tabular}
+        \caption{Ereignisse in den einzelnen Kanalbereichen}
+        \label{tab:Höhenereig}
+    \end{table}
 
     
     \section{Fragen}

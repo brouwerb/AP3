@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
 from scipy import optimize
 import matplotlib.ticker as ticker
+from uncertainties.unumpy import *
+from uncertainties import ufloat
 
 
 COLOR_STYLE = ["red","green","blue","orange","violet","darkgreen"]
@@ -26,7 +28,7 @@ SAVE_AS = "./RAD/plots/Höhenstrahlung.pdf"
 path_ = "./RAD/RAD-Cosmic.xls"
 
 data = getTableFromCells("C5","D1028",path_,"Höhenstrahlung")
-
+kanalData = data.copy()
 def calEnergie (Kanal):
     a = 48.8
     b = 8
@@ -34,11 +36,29 @@ def calEnergie (Kanal):
 
 data = [calEnergie(np.array(data[0][100:])),data[1][100:]]
 
+hunderterKanaele =[[],[]]
+add = 0
+
+for i in range (len(kanalData[0])):
+    if i % 100 ==0:
+        hunderterKanaele[0].append(kanalData[0][i])
+        hunderterKanaele[1].append(add)
+        add = 0
+    add += kanalData[1][i]
+
+totalEnergie = 0
+
+for i in range(len(data[0])):
+    totalEnergie += data[0][i] *  ufloat(data[1][i],np.sqrt(data[1][i]))
 
 
 
+#printtableaslatex(np.transpose(np.array(hunderterKanaele)),"test1","test2")
+print(totalEnergie)
+totalEnergie = totalEnergie *1e3
 
-
+result = totalEnergie * 1.60217e-19 / 1.24 / (2*3600) * 356*24*3600
+print(result)
 
 fig, ax = plt.subplots()
 
