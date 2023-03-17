@@ -379,5 +379,12 @@ def getExtrapolatedPoint(x,arr):
     ynew = p2[1]-(p2[1]-p1[1]) * verh
 
     return [x,ynew]
+
+def readFromTxt(path,startRow=0,trenner=";",colRange = [0,-1]):
+    with open(path,"r") as f:
+        data = f.read().split("\n")[startRow:-2]
+        data = [i.split(trenner)[colRange[0]:colRange[1]] for i in data]
+        data = np.transpose(np.array(data)).astype(float)
+    return data
         
 
