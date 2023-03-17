@@ -61,8 +61,8 @@
     Es gibt nun zwei Positionen, bei denen ein scharrfes Bild auf dem Schirm entsteht. Aus der Differenz dieser Positionen und dem Abstand von Blende und Linse folgt nun für den Brechungsindex und den Hauptebenenabstand:
     \begin{align}
     
-        f' = \frac{1}{4} \cdot [(e-h)-\frac{d^2}{e-h}]\\
-        f = \frac{1}{4} \cdot [\frac{d^2}{e-h}-(e-h)]
+        f' = \frac{1}{4} \cdot [(e-h)-\frac{d^2}{e-h}] \label{eq:besselBrech1}\\
+        f = \frac{1}{4} \cdot [\frac{d^2}{e-h}-(e-h)] \label{eq:besselBrech2}
             
     \end{align}
 
@@ -114,7 +114,7 @@
 
     \begin{table}
         \centering
-        \begin{tabular}{c|c}
+        \begin{tabular}{c|c|c|c}
             
             Linse & $l$ & $k$ & Brechungsindex $f$ \\ \hline
             B & 10,06(10) $\si{\centi\meter}$& 9,91(10) $\si{\centi\meter}$& 9,98(07) $\si{\centi\meter}$\\ \hline
@@ -125,6 +125,26 @@
         \caption{Ergebnisse Brechungsindex von Linse B und G mit dem Autokollimationsverfahren}
         \label{tab:BGAutokoll}
     \end{table}
+    
+    \subsection{Besselverfahren be dünnen Linsen}
+    Nun wird der Brechungsindex erneut der Linsen B und G mit dem Besselverfahren bestimmt. Auch bei diesem Versuchteil wurden die Messungen fünf mal wiederholt und anschliesend der Mittelwert der Differenz $d$ gebildet.
+    Unter der Annahme, dass bei einer dünnen Linse die Hauptebene $h=0$ ist kann Der Brechungsindex mit Formel \ref{eq:besselBrech1} bzw. \ref{eq:besselBrech2} berechnet werden (siehe Tabelle \ref{tab:BGBessel}).
+
+    \begin{table}
+        \centering
+        \begin{tabular}{c|c|c|c}
+            
+            Linse & Differenz $d$ & Länge $e$ & Brechungsindex $f$ \\ \hline
+            B & 38,29(10) $\si{\centi\meter}$& 63,10(29) $\si{\centi\meter}$& 9,97(10) $\si{\centi\meter}$\\ \hline
+            G & 21,77(10) $\si{\centi\meter}$& 41,40(29) $\si{\centi\meter}$&  7,49(10) $\si{\centi\meter}$\\ \hline
+
+            
+        \end{tabular}
+        \caption{Ergebnisse Brechungsindex von Linse B und G mit dem Besselverfahren}
+        \label{tab:BGBessel}
+    \end{table}
+     Sowohl das Autokollimationsverfahren als auch das Besselverfahren ergeben zueinander konsistente Werte. Jdeoch ist das Besselverfahren etwas ungenauer.
+    
 
     \bibliographystyle{plain}
     \bibliography{literature}
