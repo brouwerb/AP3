@@ -1,0 +1,13 @@
+\documentclass[tikz,border=5mm]{standalone}
+\begin{document}
+\begin{tikzpicture}
+  \pgfmathsetmacro{\lensRadius}{2}
+  \pgfmathsetmacro{\lensHeight}{1}
+  \pgfmathsetmacro{\startAngle}{asin(\lensHeight/\lensRadius)}
+
+  \draw [fill=blue!15]  (0,\lensHeight)
+  arc[start angle=180-\startAngle,delta angle=2*\startAngle,radius=\lensRadius]
+  arc[start angle=-\startAngle,delta angle=2*\startAngle,radius=\lensRadius]
+   -- cycle; % to get a better line end
+\end{tikzpicture}
+\end{document}
