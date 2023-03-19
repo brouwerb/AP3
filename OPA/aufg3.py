@@ -20,7 +20,7 @@ dG = ufloat(gewichteterMittelwert(dataG[2], [unsicherheit + relativ * i for i in
 brechG = 1/4 * (abstand_e-dG**2/abstand_e)
 print(brechG)
 abstand_e = ufloat(86.4,unsicherheit)- ufloat(23.3,unsicherheit)
-
+print(abstand_e)
 dataB = getTableFromCells("F8","H12",path_,"N2")
 dB = ufloat(gewichteterMittelwert(dataB[2], [unsicherheit + relativ * i for i in dataB[2]]), intExtFehler(dataB[2], [unsicherheit + relativ * i for i in dataB[2]]))
 brechB = 1/4 * (abstand_e-dB**2/abstand_e)
