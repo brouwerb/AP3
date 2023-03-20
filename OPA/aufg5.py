@@ -35,8 +35,8 @@ data = getTableFromCells("B5","F17",path_,"N4")
 e = lengtherror(data[0])-20
 s1 = lengtherror(data[1])-20
 s2 = lengtherror(data[2][4:])-20
-beta1 = uarray(data[3], 0.2)/ufloat(5, 0.2)
-beta2 = uarray(data[4][4:], 0.2)/ufloat(5, 0.2)
+beta1 = -uarray(data[3], 0.2)/ufloat(5, 0.2)
+beta2 = -uarray(data[4][4:], 0.2)/ufloat(5, 0.2)
 
 e = np.concatenate((e, e[4:]))
 
