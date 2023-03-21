@@ -10,50 +10,55 @@ import matplotlib.ticker as ticker
 
 
 COLOR_STYLE = ["red","green","blue","orange","violet","darkgreen"]
-Y_LABEL = r"Hits in 400s"
+Y_LABEL = r"Energie in KeV"
 X_LABEL = r"Kanäle"
 X_START =0 
 Y_START =0
-X_END = 100
-Y_END = 20000
+X_END = 60
+Y_END = 2600
 
-X_MAJOR_TICK = 20
-Y_MAJOR_TICK =2000
-X_MINOR_TICK = 5
-Y_MINOR_TICK = 500
-SAVE_AS = "./RAD/plots/Cobalt-Höhen.pdf"
+X_MAJOR_TICK = 10
+Y_MAJOR_TICK =500
+X_MINOR_TICK = 2
+Y_MINOR_TICK = 100
+SAVE_AS = "./RAD/plots/Cobalt-Kalib.pdf"
 
-path_ = "./RAD/RAD-Cosmic.xls"
+path_ = "./RAD/RAD.xls"
 
-data = getTableFromCells("A5","B1028",path_,"Höhenstrahlung")
+elements = ["Cs-137","Co-60","Na-22"]
 
+peaks = [[24.0,27.0,51.2],[1173,1333,2506]]
 
-
-
-peaks = [24.0,27.0,51.2]
-
-
+print(peaks)
 
 
 fig, ax = plt.subplots()
 
 
 ax.grid()
-
-ax.plot(data[0],data[1],color= COLOR_STYLE[0])
-
-for i,I in enumerate(peaks):
-    
-    ax.axvline(I,color = "black",linewidth=0.8)
+fitData = [[],[]]
+ax.scatter(peaks[0],peaks[1],color = COLOR_STYLE[0])
 
 
 
+
+def gerade (x,a,b):
+    return a*x+b
+def geradeArr (x,arr):
+    return gerade(x,arr[0],arr[1])
+
+popt,perr = optimize.curve_fit(gerade,peaks[0],peaks[1],p0=[100,0])
+print(popt,np.sqrt(np.diag(perr)))
+fitPlot = genDataFromFunktion(5,X_START,X_END,popt,geradeArr)
+
+fit, = ax.plot(fitPlot[0],fitPlot[1],color="black")
 
 ax.set_xlabel(X_LABEL)
 ax.set_ylabel(Y_LABEL)
 ax.set_xlim(X_START,X_END)
 ax.set_ylim(Y_START,Y_END)
-ax.legend(("Cobalt","peaks"))
+
+ax.legend(("Co-60 peaks",f"fit ax+c mit a={round_errtex(popt[0],np.sqrt(np.diag(perr)[0]))}; b={round_errtex(popt[1],np.sqrt(np.diag(perr)[1]))}"),loc=2)
 
 
 ax.xaxis.set_major_locator(MultipleLocator(X_MAJOR_TICK))
