@@ -53,15 +53,57 @@
     In der Physik spielen Linsen in optischen Versuchsuafbauten eine sehr wichtige Rolle. In diesem Versuch soll es darum gehen, verschiedene 
     Methoden auszuprobieren um den Brechungsindex und Hauptebenenabstand verschiedener Lisnen bzw Linsensysteme zu messen.
 
-    \section{Theorie}
+    \section{Allgemeine Theorie}
+    \FloatBarrier
+    In der Physik spielen Linsen in optischen Versuchsuafbauten eine sehr wichtige Rolle. In diesem Versuch soll es darum gehen, verschiedene 
+    Methoden auszuprobieren um den Brechungsindex und Hauptebenenabstand verschiedener Lisnen bzw Linsensysteme zu messen.
+    \subsection{Autokollimation}
+    Wie in Abbildung \ref{fig:autoKollAbb} zu sehen ist, wird die zu untersuchende Linse zwischen Blende und Spiegel gestellt. Nun wird der Abstande $l$ zwischen 
+    Linse und Blende so eingestellt, dass auf der Blende welche gleichzeitig als Schirm dient ein Scharfes Bild entsteht. Dieser Vorgang wird wiederholt mit der um $180^\circ$ gedrehten Linse und der Abstand $k$ gemessen.
+    Aus diesen Daten lassen Sich Brechungsindex und Hauptebenenabstand wie folgt berechnen:
 
-    \subsection{Dünne Linsen}
-    \paragraph{Autokollimationsmethode}
-    Bei Autokollimationsmethode ist die Brennweite
     \begin{align}
-        f = d \label{eq:auto}
+    f' = \frac{k+l-h}{2} \label{eq:autokollBrech}\\
+    h = k + l - 2 \cdot f' \label{eq:autokollHaupt}
     \end{align}
-    bei dünnen Linsen genau der Abstand $d$ zwischen Objekt/Bild und Linse.
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{Autokollimation_abb.png}
+        \caption{Versuchsaufbau zum Autokollimationsverfahren \cite{OPA}}   % Quelle Fehlt
+        \label{fig:autoKollAbb}
+    \end{figure}
+
+    \subsection{Besselmethode}
+    Bei der Besselmethode wird die zu untersuchende Linse zwischen Blende und Schirm wie in Abbildung \ref{fig:BesselAbb} veranschaulicht gestellt.
+    Es gibt nun zwei Positionen, bei denen ein scharrfes Bild auf dem Schirm entsteht. Aus der Differenz dieser Positionen und dem Abstand von Blende und Linse folgt nun für den Brechungsindex und den Hauptebenenabstand:
+    \begin{align}
+        f' = \frac{1}{4} \cdot [(e-h)-\frac{d^2}{e-h}] \label{eq:besselBrech1}\\
+        f = \frac{1}{4} \cdot [\frac{d^2}{e-h}-(e-h)] \label{eq:besselBrech2}
+    \end{align}
+    
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{Bessel_Abb.png}
+        \caption{schematischer Versuchsaufbau der Besselmethode \cite{OPA}}   % Quelle Fehlt
+        \label{fig:BesselAbb}
+    \end{figure}
+
+    \subsection{Abbemethode}
+
+    Bei der Messmethode nach Abbe werden die position der Hauptachsen und Brennweiten der Linsensysteme gemessen. 
+
+    \subsection{Dünne Linsen speziefisch}
+    Bei Dünnen Linsen kann der Abstand $h = 0$ zwischen den beiden Haupachsen vernachlässigt werden.
+    
+    \paragraph{Autokollimationsmethode}
+    Bei Autokollimationsmethode wird der Aufbau so aufgebaut, dass das Bild und Objekt auf gleicher Position sind. Auf der anderen Seite der Linse reflektiert ein Spiegel die parallelen Strahlen. Wenn das Bild scharf ist, ist die Brennweite
+    \begin{align}
+        f = \frac{k + l - h}{2}  = d \label{eq:auto}
+    \end{align}
+    bei dünnen Linsen $h=0$ genau der Abstand $d = k = l$ zwischen Objekt/Bild und Linse.
+
     \paragraph{Besselmethode}
     Bei der Besselmethode kann die Brennweite
     \begin{align}
@@ -81,7 +123,7 @@
         \end{split}
     \end{align}
 
-    \paragraph*{Bessel- und Autokollimationsmethode}
+    \paragraph{Bessel- und Autokollimationsmethode}
     Bei dicken Linsen kann durch zusammenführen der Besselmethode und Autokollimationsmethode die Brennweite $f'$ und der Hauptebenenabstand $h$
     
     \begin{align} \begin{split} \label{eq:dicke}
