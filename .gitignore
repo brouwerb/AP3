@@ -428,3 +428,8 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+OPA/Optik.tex
+OPA/aufg5.py
+OPA/aufg4.py
+FHV/Franz.tex
+OPA/literature.bib
