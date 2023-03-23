@@ -44,7 +44,7 @@ for h,H in enumerate(colordif):
         plotData[h].append([[1,2,3,4],[np.sin(np.arctan(i[j+1] /i[0]/2 ))for j in range(len(i)-1)]])
         fitData[h][0].extend([1,2,3,4])
         fitData[h][1].extend([np.sin(np.arctan(i[j+1] /i[0]/2 ))for j in range(len(i)-1)])
-        uncertanty[h].append(ufloat(i[-1],analogErr(0.3))/(ufloat(i[0],analogErr(0.2))))
+        uncertanty[h].append(unumpy.sin(unumpy.arctan(ufloat(i[-1],0.3)/(ufloat(i[0],0.2)))))
 
 print(plotData)
 print(fitData)
@@ -65,7 +65,7 @@ fig1, ax1 = plt.subplots()
 fig2, ax2 = plt.subplots()
 fig3, ax3 = plt.subplots()
 
-l = [79.85,46.15,52.6]
+l = [79.85,26.15,52.6]
 color = ["Grün","Blau","Rot"]
 
 
