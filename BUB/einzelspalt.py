@@ -12,7 +12,7 @@ from uncertainties.unumpy import *
 from uncertainties import ufloat
 import numpy as np
 
-uncertanty = ufloat(5,0.1)/(ufloat(100,0.1)- ufloat(10,0.1))
+uncertanty = ufloat(5,0.1)/(ufloat(1000,0.1)- ufloat(10,0.1))
 print(uncertanty)
 
 X_LABEL = r"Ordnung der Minima"
@@ -34,10 +34,12 @@ data = getTableFromCells("C24","E29",path_,"Spalt")
 print(data)
 plotData = []
 fitData = [[],[]]
+uncertanty =[]
 for i in data:
     plotData.append([[1,2,3,4,5],[(i[j+1] /i[0]/2 )for j in range(len(i)-1)]])
     fitData[0].extend([1,2,3,4,5])
     fitData[1].extend([(i[j+1] /i[0]/2 )for j in range(len(i)-1)])
+    uncertanty.append( ufloat(i[-1],analogErr(0.3))/(ufloat(i[0],analogErr(0.2))))
 
 print(plotData)
 #---------------  fit
@@ -57,7 +59,7 @@ l = [189.9,121.6,62.4]
 ax.grid()
 for i,I in enumerate(plotData):
     
-    ax.errorbar(I[0],I[1],fmt="o",yerr=unumpy.std_devs(uncertanty),elinewidth=0.9,capsize=4,capthick=0.9,ecolor = "black",label = str(l[i]) + " cm")
+    ax.errorbar(I[0],I[1],fmt="o",yerr=unumpy.std_devs(uncertanty[i]),elinewidth=0.9,capsize=4,capthick=0.9,label = str(l[i]) + " cm")
 
 
 popt,perr = optimize.curve_fit(func,fitData[0],fitData[1])
