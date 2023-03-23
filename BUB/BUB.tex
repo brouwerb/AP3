@@ -38,18 +38,23 @@
     In diesem Versuch wurde mit einem Einfachspalt, einem Gitter und einem Prisma Phänomene der Beugung und Brechung untersucht. 
 
     \subsection{Beugung am Einfachspalt}
-    Bei bestrahlung eines Einfachspalts (mit Spaltbreite $d$) mit Korärentem Licht der Wellenlänge $\lambda$ entsteht auf dem Schirm mit Abstand $l$ ein Beugungsbild bestehend aus Minima und Maxima mit Abstand $s$ zum Maxima nullter Ordnung. Dessen Position kann mit folgenden Fromeln berechnet werden:
+    Bei bestrahlung eines Einfachspalts (mit Spaltbreite $d$) mit kohärentem Licht der Wellenlänge $\lambda$ entsteht auf dem Schirm mit Abstand $l$ ein Beugungsbild bestehend aus Minima und Maxima mit Abstand $s$ zum Maxima nullter Ordnung. Dessen Position kann mit folgenden Fromeln berechnet werden:
     \begin{align}
         \frac{n * \lambda}{d} = sin{\alpha} \approx \tan{\alpha} = \frac{s_{Minima}}{l} \label{eq:einfachspalt} \\
         \frac{(n + \frac{1}{2})* \lambda}{d} = sin{\alpha} \approx \tan{\alpha} = \frac{s_{Maxima}}{l} 
     \end{align}
-
+    \subsection{Beugung am Gitter}
+    Wird ein Gitter mit Gitterkonstante $a$ bestrahlt so entsteht auf dem Schirm ein charakteristisches Beugungsbilt mit Hauptmaxima n-ter Ordnung mit Entfernung $s$ zum Mittelpunkt. Deren Position Kann Berechnet werden mit:
+    \begin{align}
+        \frac{n * \lambda}{a} = sin{\alpha} \approx \tan{\alpha} = \frac{s_{Maxima}}{l} \label{eq:Gitter} \\
+        
+    \end{align}
     \section{Ergebnisse}
     \subsection{Einfachspalt}
-    In Diesem Versuchsteil wurde mit einem Laser der Wellenlänge $\lambda = 532(1)\si{\nano\meter}$ ein Einfachspalt bestrahlt und dessen Beugungsbild untersucht.
+    In diesem Versuchsteil wurde mit einem Laser der Wellenlänge $\lambda = 532(1)\si{\nano\meter}$ ein Einfachspalt bestrahlt und dessen Beugungsbild untersucht.
     Dazu wurde bei drei unterschiedlichen Schirmabständen der Abstand der Minima der Jeweiligen Ordnung zueinander gemessen. Bei der Auswertung wurde die Kleinwinkelnäherung angewerndet, da im Extremalfall $\arctan(\frac{s}{l}) = 1,1457°$ und $\arcsin(\frac{s}{l}) = 1,1459°$
     was einer Abweichung von $0,017\percent$ entspricht. Die Messergebnisse wurden in Graph \ref{fig:einzelspalt} geplottet und mit einer Ausgleichsgerade $a \cdot x + b$ mit den Parametern $a = 3,64(13) \cdot 10^{-3}$ und $b= -1,05 \cdot 10^{-4}$ gefittet.
-    Mit disen Parameter lässt sich aus Formel \ref{eq:einfachspalt} und mithilfe der gaußschen Fehlerfortpflanzung die Spaltbreite berechnen zu $d= 146(5) \cdot 10^{-3}$.
+    Mit disen Parameter lässt sich aus Formel \ref{eq:einfachspalt} und mithilfe der gaußschen Fehlerfortpflanzung die Spaltbreite berechnen zu $d= 146(5) \cdot 10^{-3}$. Die Fehlerbalken wurden mit dem Analogenfehler eines Metermaßes und Fehlerfortpflanzung berechent.
     
     \begin{figure}
         \centering
@@ -57,6 +62,7 @@
         \caption{Messergebnisse des Einzelspalts}
         \label{fig:einzelspalt}
     \end{figure}
+    \subsection{Gitter}
 
     \bibliographystyle{plain}
     \bibliography{literature}
