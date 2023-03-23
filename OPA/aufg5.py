@@ -88,6 +88,13 @@ errors_g_prime = np.sqrt(np.diag(pcov_g_prime))
 
 print(f"f_prime = {popt_g_prime[0]} +- {errors_g_prime[0]}")
 print(f"h2 = {popt_g_prime[1]} +- {errors_g_prime[1]}")
+<<<<<<< HEAD
+=======
+favg = gewichteterMittelwert([popt_g[0], -popt_g_prime[0]],[errors_g[0],errors_g_prime[0]])
+favgerr = intExtFehler([popt_g[0], -popt_g_prime[0]],[errors_g[0],errors_g_prime[0]])
+
+print(f"f_avg = {favg} +- {favgerr}")
+>>>>>>> c1db1765f39811d14f28b3cde6b5e69e0118b8ab
 
 # Plot data mit error bars and fitted function
 plt.errorbar(g_nom,1-beta_nom,xerr=g_std,yerr=beta_std, fmt='o',label='Messwerte')
