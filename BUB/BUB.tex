@@ -46,7 +46,7 @@
     \subsection{Beugung am Gitter}
     Wird ein Gitter mit Gitterkonstante $a$ bestrahlt so entsteht auf dem Schirm ein charakteristisches Beugungsbilt mit Hauptmaxima n-ter Ordnung mit Entfernung $s$ zum Mittelpunkt. Deren Position Kann Berechnet werden mit:
     \begin{align}
-        \frac{n * \lambda}{a} = sin{\alpha} \approx \tan{\alpha} = \frac{s_{Maxima}}{l} \label{eq:Gitter} \\
+        \frac{n * \lambda}{a} = sin{\alpha} \approx \tan{\alpha} = \frac{s_{Maxima}}{l} \label{eq:Gitter} \label{eq:Gitter}\\
         
     \end{align}
     \section{Ergebnisse}
@@ -57,7 +57,7 @@
     Mit disen Parameter lässt sich aus Formel \ref{eq:einfachspalt} und mithilfe der gaußschen Fehlerfortpflanzung die Spaltbreite berechnen zu $d= 146(5) \cdot 10^{-3}$. Die Fehlerbalken wurden mit dem Analogenfehler eines Metermaßes und Fehlerfortpflanzung berechent.
     
 
-    
+
     \begin{figure}
         \centering
         \includegraphics[width=0.8\textwidth]{./plots/einzelspalt.pdf}
@@ -69,7 +69,8 @@
     Anschließend wurde bei drei unterschiedlichen Abständen der Abstand der Maxima gleicher Ordnung zueinander gemessen für drei der Charakteristischen Wellenlängen. Hirbei kann nicht von der Kleinwinkelnäherung gebrauch gemacht werden, da im Extremalfall $\arctan(\frac{s}{l}) = 14.574°$ und $\arcsin(\frac{s}{l}) = 15,070°$
     was einer Abweichung von $2,14\percent$ entspricht. Daher wurde in der Auswertung $\sin(\arctan(\frac{s}{l}))$ gegen die Ordnung der Maxima für die Drei Wellenlängen wie in den Graphen \ref{fig:GitterBLAU}, \ref{fig:GitterGRÜN} und \ref{fig:GitterROT} zu sehen aufgetragen.
     Dabei fällt auf, das die Messwerte des Abstandes $26,15 \si{\centi\metre}$ eine hohe ungenauhigkeit aufweisen, was vermutlich an dem kleineren Abstand der Maxima bei dieser Länge liegt.
-    mit 
+    Mit den Parametern der Ausgleichsgeraden kann nun mit Formel \ref{eq:Gitter} kann nun für jede Farbe die Wellenlänge berechnet werden. Die Ergebnisse sind in Tabelle \ref{tab:Gitter} mit den Literaturwerten verglichen. Die Ergebnisse liegen nahe an den Literaturwerten allerdings mit einem großen Fehler von bis zu 40 nm.
+    Dieser lässt sich mit dem großen Fehler des Fits erklären aufgrund der großen ungenauhigkeit bei Abstand a =  $26,15 \si{\centi\metre}$. Zur Fehler berechung fließen die analogen Fehler in den Fehler des Fits mit ein welcher dann mit gaußscher Fehlerfortpflanzung mit dem Fehler der Gitterkonstante kombiniert wird.
 
     \begin{figure}
         \centering
@@ -88,8 +89,21 @@
         \includegraphics[width=0.8\textwidth]{./plots/Gitter_Rot.pdf}
         \caption{Messergebnisse am Gitter der roten Wellenlänge}
         \label{fig:GitterRot}
-    \end{figure}
 
+    \end{figure}
+    \begin{table}
+        \centering
+        \begin{tabular}{c|c|c}
+            
+            Farbe & Steigung der Ausgleichsgeraden & Wellenlänge $\lambda in \si{\nano\metre}$  & Literaturwert  $\lambda_{lit} in \si{\nano\metre}$\\ \hline
+            Grün & 0,0549(33) & 549(33) & 546 \\ \hline
+            Blau &  0,0386(42) & 390(40) & 405 \\ \hline
+            Rot & 0,0574(39) & 570(40) &577 bzw. 579  \\\hline
+
+        \end{tabular}
+        \caption{Ergebnisse der Hg-Lampe}
+        \label{tab:Gitter}
+    \end{table}
 
 
     \bibliographystyle{plain}

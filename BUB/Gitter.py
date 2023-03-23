@@ -14,11 +14,11 @@ import numpy as np
 
 
 
-X_LABEL = r"Ordnung der Minima"
+X_LABEL = r"Ordnung der Maxima"
 Y_LABEL = r"Verhältnis $sin(arctan(\frac{s}{l}))$"
 X_START =0.5
 Y_START =0
-X_END = 5.5
+X_END = 4.5
 Y_END = 0.02
 
 X_MAJOR_TICK = 1
@@ -81,24 +81,18 @@ for h,H in enumerate(plotData):
     popt,perr = optimize.curve_fit(func,fitData[h][0],fitData[h][1])
     print(popt,np.sqrt(np.diag(perr)))
     fitDat =genDataFromFunktion(10,X_START,X_END,popt,funcArr)
-    axes[h].plot(fitDat[0],fitDat[1],label=fr"Ausgleichsgerade mit a={round_errtex(popt[0],np.sqrt(np.diag(perr))[0])}; b={round_errtex(popt[1],np.sqrt(np.diag(perr))[1])}")
-    axes[h].legend()
+    axes[h].plot(fitDat[0],fitDat[1],label=f"Ausgleichsgerade mit \n a={round_errtex(popt[0],np.sqrt(np.diag(perr))[0])}; b={round_errtex(popt[1],np.sqrt(np.diag(perr))[1])}")
+    axes[h].legend(loc='upper left')
     figs[h].savefig(f"./BUB/plots/Gitter_{color[h]}.pdf")
 
 
 # Set the x-axis formatter
 # ax.yaxis.set_major_formatter(ticker.FuncFormatter(format_func))
 
-
-
-
-
-
-
 plt.show()
 
-
-sl = ufloat(3.64e-3,0.13e-3)
-lam = ufloat(532e-9,1e-9)
-res = lam/sl
-print(res)
+sl = [ufloat(0.0549,0.0033),ufloat(0.0386,0.0042),ufloat(0.0574,0.0039)]
+git = ufloat(10e-6,0.02e-6)
+for i in sl:
+    res = git * i
+    print(res)
