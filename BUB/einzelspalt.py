@@ -35,7 +35,7 @@ plotData = []
 for i in data:
     plotData.append([[1,2,3,4,5],[i[j+1] /i[0] for j in range(len(i)-1)]])
 
-
+print(plotData)
 #---------------  fit
 # T = 22.7+273.15
 # def func(n,x,c):
@@ -50,8 +50,8 @@ for i in data:
 
 
 #ax.scatter(data[0],data[1],s=15)
-ax.errorbar(np.array(data[0])-popt[1]+1,data[1],fmt="x",yerr=data[2], ecolor = 'black',elinewidth=0.9,capsize=4,capthick=0.9,label="Messdaten")
-ax.plot(np.array(fitDat[0])-popt[1]+1,fitDat[1],color = "red",label=fr"fit mit $\chi$={round_errtex(popt[0],np.sqrt(np.diag(perr))[0])}" )
+# ax.errorbar(np.array(data[0])-popt[1]+1,data[1],fmt="x",yerr=data[2], ecolor = 'black',elinewidth=0.9,capsize=4,capthick=0.9,label="Messdaten")
+# ax.plot(np.array(fitDat[0])-popt[1]+1,fitDat[1],color = "red",label=fr"fit mit $\chi$={round_errtex(popt[0],np.sqrt(np.diag(perr))[0])}" )
 
 
 
