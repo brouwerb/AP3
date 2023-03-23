@@ -34,11 +34,6 @@ d = ufloat(gewichteterMittelwert(datad[2], [0.06 + 0.0004 * i for i in datad[2]]
 
 f_prime, h_prime = calculate_f_h(e, k, l, d)
 
-
 print(e, k, l, d)
-
-
-print(e, k, l, d)
-
 print(f"f' = {f_prime}")
 print(f"h' = {h_prime}")
