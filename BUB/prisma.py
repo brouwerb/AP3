@@ -31,7 +31,7 @@ def cal_n(w):
 n = [cal_n(w) for w in winkel]
 
 for i in range(len(n)):
-    print("n = ",n[i]," bei ",wellen[i],"nm")
+    print("n = ",n[i]," bei ",wellen[i],"nm" ,"winkel = ",winkel[i],"°")
 
 
 #fit n with gerade with errors of n
@@ -58,3 +58,13 @@ ax.legend()
 plt.savefig("./BUB/plots/prism1.pdf")
 plt.show()
 
+def wel(n):
+    return (n-popt[1])/popt[0]
+
+enerspar = np.array([48.7, 47.5])
+
+ne = [cal_n(w) for w in enerspar]
+le  = [wel(n) for n in ne]
+
+for i in range(len(le)):
+    print("Energie = ",enerspar[i],"°"," bei ",le[i],"nm", "n = ",ne[i])
