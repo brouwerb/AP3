@@ -50,6 +50,13 @@
     \end{align}
 
     \subsection{Brechung am Prisma}
+
+    \paragraph{Brechunsindex}
+    Der Brechungsindex $n$ kann aus dem minimalen Ablenkungswinkel $\dekta_{min}$ und dem Winkel $e$ des Prismas mit der Formel
+    \begin{align}
+        n = \frac{\sin\left(\frac{d_{min} + e}{2}\right)}{\sin\left(\frac{e}{2}\right)} \label{eq:brechungsindex}
+    \end{align}
+    berechnet werden.
     
     \section{Ergebnisse}
     \subsection{Einfachspalt}
@@ -69,7 +76,7 @@
     \subsection{Berechnung der Wellenlängen einer Hg Lampe}
     Um die charakteristischen Wellenlängen einer Quksilberdampf-Lampe zu bestimmen wird in diesem Versuchsteil deren Licht auf ein Gitter mit einer Gitterkonstante von $a=10.00(02)\cdot \si{\micro\metre}$ gerichtet.
     Anschließend wurde bei drei unterschiedlichen Abständen der Abstand der Maxima gleicher Ordnung zueinander gemessen für drei der Charakteristischen Wellenlängen. Hirbei kann nicht von der Kleinwinkelnäherung gebrauch gemacht werden, da im Extremalfall $\arctan(\frac{s}{l}) = 14.574°$ und $\arcsin(\frac{s}{l}) = 15,070°$
-    was einer Abweichung von $2,14\percent$ entspricht. Daher wurde in der Auswertung $\sin(\arctan(\frac{s}{l}))$ gegen die Ordnung der Maxima für die Drei Wellenlängen wie in den Graphen \ref{fig:GitterBLAU}, \ref{fig:GitterGRÜN} und \ref{fig:GitterROT} zu sehen aufgetragen.
+    was einer Abweichung von $2,14\%$ entspricht. Daher wurde in der Auswertung $\sin(\arctan(\frac{s}{l}))$ gegen die Ordnung der Maxima für die Drei Wellenlängen wie in den Graphen \ref{fig:GitterBLAU}, \ref{fig:GitterGRÜN} und \ref{fig:GitterROT} zu sehen aufgetragen.
     Dabei fällt auf, das die Messwerte des Abstandes $26,15 \si{\centi\metre}$ eine hohe ungenauhigkeit aufweisen, was vermutlich an dem kleineren Abstand der Maxima bei dieser Länge liegt.
     Mit den Parametern der Ausgleichsgeraden kann nun mit Formel \ref{eq:Gitter} kann nun für jede Farbe die Wellenlänge berechnet werden. Die Ergebnisse sind in Tabelle \ref{tab:Gitter} mit den Literaturwerten verglichen. Die Ergebnisse liegen nahe an den Literaturwerten allerdings mit einem großen Fehler von bis zu 40 nm.
     Dieser lässt sich mit dem großen Fehler des Fits erklären aufgrund der großen ungenauhigkeit bei Abstand a =  $26,15 \si{\centi\metre}$. Zur Fehler berechung fließen die analogen Fehler in den Fehler des Fits mit ein welcher dann mit gaußscher Fehlerfortpflanzung mit dem Fehler der Gitterkonstante kombiniert wird.
@@ -95,7 +102,7 @@
     \end{figure}
     \begin{table}
         \centering
-        \begin{tabular}{c|c|c}
+        \begin{tabular}{c|c|c|c}
             
             Farbe & Steigung der Ausgleichsgeraden & Wellenlänge $\lambda in \si{\nano\metre}$  & Literaturwert  $\lambda_{lit} in \si{\nano\metre}$\\ \hline
             Grün & 0,0549(33) & 549(33) & 546 \\ \hline
@@ -105,6 +112,24 @@
         \end{tabular}
         \caption{Ergebnisse der Hg-Lampe}
         \label{tab:Gitter}
+    \end{table}
+
+    \subsection{Prisma}
+    \paragraph{Prismenwinkel}
+    Der Prismenwinkel $e$ kann durch die Mesung der beiden Reflektionswinkel $\phi = 124,10(2)^{\circ}$ und $\theta = 4,10(2)^{\circ}$ bei Beleuchtung genau auf die Kante des Prismas bestimmt werden. Es gilt
+    \begin{align}
+        e = \frac{\phi - \theta}{2} = 60,000(14)^{\circ} \label{eq:prisma} \..
+    \end{align}
+    Als Fehler wurde eine anaoge Ableseungenauigkeit von $0,1^{\circ}$ angenommen.
+
+    \paragraph{Brechungsindex}
+    Mit Formel \ref{eq:brechungsindex} kann der Brechungsindex des Prismenmaterials in Abhängigkeit von der Wellenlänge berechnet werden. Die berechneten Werte und die gemessen Werte sind in Tabelle \ref{tab:prisma} zusammengefasst.
+
+    \begin{table}
+        \centering
+        \begin{tabular}{c|c|c|c}
+            Wellenlänge $\lambda in \si{\nano\metre}$ \cite{Wiki} & Winkel & Brechungsindex $n$ \\ \hline
+            
     \end{table}
 
 
