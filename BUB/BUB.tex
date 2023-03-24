@@ -46,7 +46,7 @@
     \subsection{Beugung am Gitter}
     Wird ein Gitter mit Gitterkonstante $a$ bestrahlt so entsteht auf dem Schirm ein charakteristisches Beugungsbilt mit Hauptmaxima n-ter Ordnung mit Entfernung $s$ zum Mittelpunkt. Deren Position Kann Berechnet werden mit:
     \begin{align}
-        \frac{n * \lambda}{a} = sin{\alpha} \approx \tan{\alpha} = \frac{s_{Maxima}}{l} \label{eq:Gitter} \\
+        \frac{n * \lambda}{a} = sin{\alpha} \approx \tan{\alpha} = \frac{s_{Maxima}}{l} \label{eq:Gitter} 
     \end{align}
 
     \subsection{Brechung am Prisma}
@@ -54,16 +54,17 @@
     \paragraph{Brechunsindex}
     Der Brechungsindex $n$ kann aus dem minimalen Ablenkungswinkel $\delta_{min}$ und dem Winkel $e$ des Prismas mit der Formel
     \begin{align}
-        n = \frac{\sin\left(\frac{d_{min} + e}{2}\right)}{\sin\left(\frac{e}{2}\right)} \label{eq:brechungsindex}
+        n = \frac{\sin\left(\frac{\delta_{min} + e}{2}\right)}{\sin\left(\frac{e}{2}\right)} \label{eq:brechungsindex}
     \end{align}
     berechnet werden.
     
     \section{Ergebnisse}
     \subsection{Einfachspalt}
     In diesem Versuchsteil wurde mit einem Laser der Wellenlänge $\lambda = 532(1)\si{\nano\meter}$ ein Einfachspalt bestrahlt und dessen Beugungsbild untersucht.
-    Dazu wurde bei drei unterschiedlichen Schirmabständen der Abstand der Minima der Jeweiligen Ordnung zueinander gemessen. Bei der Auswertung wurde die Kleinwinkelnäherung angewerndet, da im Extremalfall $\arctan(\frac{s}{l}) = 1,1457°$ und $\arcsin(\frac{s}{l}) = 1,1459°$
+    Dazu wurde bei drei unterschiedlichen Schirmabständen der Abstand der Minima der Jeweiligen Ordnung zueinander gemessen. Bei der Auswertung wurde die Kleinwinkelnäherung angewerndet, da im Extremalfall $\arctan(\frac{s}{l}) = 1,1457^{\circ}$ und $\arcsin(\frac{s}{l}) = 1,1459^{\circ}$
     was einer Abweichung von $0,017\%$ entspricht. Die Messergebnisse wurden in Graph \ref{fig:einzelspalt} geplottet und mit einer Ausgleichsgerade $a \cdot x + b$ mit den Parametern $a = 3,64(13) \cdot 10^{-3}$ und $b= -1,05 \cdot 10^{-4}$ gefittet.
-    Mit disen Parameter lässt sich aus Formel \ref{eq:einfachspalt} und mithilfe der gaußschen Fehlerfortpflanzung die Spaltbreite berechnen zu $d= 146(5) \cdot 10^{-3}$. Die Fehlerbalken wurden mit dem Analogenfehler eines Metermaßes und Fehlerfortpflanzung berechent.
+    Mit disen Parameter lässt sich aus Formel \ref{eq:einfachspalt} und mithilfe der gaußschen Fehlerfortpflanzung die Spaltbreite berechnen zu $d= 146(5) \cdot 10^{-3}$. Die Fehlerbalken wurden mit dem Analogenfehler eines Metermaßes (0,1 cm) und Fehlerfortpflanzung berechent.
+    Das Ergebnis scheint realisch und auch der Fehler ist angesichts der Messmethode gerechtfertigt.
     
 
 
@@ -74,12 +75,12 @@
         \label{fig:einzelspalt}
     \end{figure}
     \subsection{Berechnung der Wellenlängen einer Hg Lampe}
-    Um die charakteristischen Wellenlängen einer Quksilberdampf-Lampe zu bestimmen wird in diesem Versuchsteil deren Licht auf ein Gitter mit einer Gitterkonstante von $a=10.00(02)\cdot \si{\micro\metre}$ gerichtet.
-    Anschließend wurde bei drei unterschiedlichen Abständen der Abstand der Maxima gleicher Ordnung zueinander gemessen für drei der Charakteristischen Wellenlängen. Hirbei kann nicht von der Kleinwinkelnäherung gebrauch gemacht werden, da im Extremalfall $\arctan(\frac{s}{l}) = 14.574°$ und $\arcsin(\frac{s}{l}) = 15,070°$
+    Um die charakteristischen Wellenlängen einer Quksilberdampf-Lampe zu bestimmen wird in diesem Versuchsteil deren Licht auf ein Gitter mit einer Gitterkonstante von $a=10.00(02) \si{\micro\metre}$ gerichtet.
+    Anschließend wurde bei drei unterschiedlichen Abständen der Abstand der Maxima gleicher Ordnung zueinander gemessen für drei der charakteristischen Wellenlängen. Hirbei kann nicht von der Kleinwinkelnäherung gebrauch gemacht werden, da im Extremalfall $\arctan(\frac{s}{l}) = 14.574^{\circ}$ und $\arcsin(\frac{s}{l}) = 15,070^{\circ}$
     was einer Abweichung von $2,14\%$ entspricht. Daher wurde in der Auswertung $\sin(\arctan(\frac{s}{l}))$ gegen die Ordnung der Maxima für die Drei Wellenlängen wie in den Graphen \ref{fig:GitterBLAU}, \ref{fig:GitterGRÜN} und \ref{fig:GitterROT} zu sehen aufgetragen.
-    Dabei fällt auf, das die Messwerte des Abstandes $26,15 \si{\centi\metre}$ eine hohe ungenauhigkeit aufweisen, was vermutlich an dem kleineren Abstand der Maxima bei dieser Länge liegt.
-    Mit den Parametern der Ausgleichsgeraden kann nun mit Formel \ref{eq:Gitter} kann nun für jede Farbe die Wellenlänge berechnet werden. Die Ergebnisse sind in Tabelle \ref{tab:Gitter} mit den Literaturwerten verglichen. Die Ergebnisse liegen nahe an den Literaturwerten allerdings mit einem großen Fehler von bis zu 40 nm.
-    Dieser lässt sich mit dem großen Fehler des Fits erklären aufgrund der großen ungenauhigkeit bei Abstand a =  $26,15 \si{\centi\metre}$. Zur Fehler berechung fließen die analogen Fehler in den Fehler des Fits mit ein welcher dann mit gaußscher Fehlerfortpflanzung mit dem Fehler der Gitterkonstante kombiniert wird.
+    Dabei fällt auf, das die Messwerte des Abstandes $26,15 \si{\centi\metre}$ eine hohe Ungenauhigkeit aufweisen, was vermutlich an dem kleineren Abstand der Maxima bei dieser Länge liegt.
+    Mit den Parametern der Ausgleichsgeraden kann nun mit Formel \ref{eq:Gitter} für jede Farbe die Wellenlänge berechnet werden. Die Ergebnisse sind in Tabelle \ref{tab:Gitter} mit den Literaturwerten verglichen. Die Ergebnisse liegen nahe an den Literaturwerten allerdings mit einem großen Fehler von bis zu 40 nm.
+    Dieser lässt sich mit dem großen Fehler des Fits erklären aufgrund der großen ungenauhigkeit bei dem Abstand a =  $26,15 \si{\centi\metre}$. Zur Fehlerberechung fließen die analogen Fehler (Metermaß 0,1 cm) in den Fehler des Fits mit ein welcher dann mit gaußscher Fehlerfortpflanzung mit dem Fehler der Gitterkonstante kombiniert wird.
 
     \begin{figure}
         \centering
@@ -97,14 +98,14 @@
         \centering
         \includegraphics[width=0.8\textwidth]{./plots/Gitter_Rot.pdf}
         \caption{Messergebnisse am Gitter der roten Wellenlänge}
-        \label{fig:GitterRot}
+        \label{fig:GitterROT}
     \end{figure}
 
     \begin{table}
         \centering
         \begin{tabular}{c|c|c|c}
             
-            Farbe & Steigung der Ausgleichsgeraden & Wellenlänge $\lambda in \si{\nano\metre}$  & Literaturwert  $\lambda_{lit} in \si{\nano\metre}$\\ \hline
+            Farbe & Steigung der Ausgleichsgeraden & Wellenlänge $\lambda$ in $\si{\nano\metre}$  & Literaturwert  $\lambda_{lit}$ in $\si{\nano\metre}$ \cite{Wiki}\\ \hline
             Grün & 0,0549(33) & 549(33) & 546 \\ \hline
             Blau &  0,0386(42) & 390(40) & 405 \\ \hline
             Rot & 0,0574(39) & 570(40) &577 bzw. 579  \\\hline
